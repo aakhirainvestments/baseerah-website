@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Dhul Hijjah Dowrah",
+    "day": "23",
+    "month": "May",
+    "year": "2026",
+    "description": "A historical walk through the Sacred Lands",
+    "time": "1pm – Asr",
+    "location": "Masjid al-Salaam, Athlone",
+    "fee": {
+      "display": "Free",
+      "is_free": true
+    },
+    "registration_link": "",
+    "published": true
+  },
+  {
+    "title": "4-Week Aqīdah Course (Pt.1)",
+    "day": "26",
+    "month": "Jul",
+    "year": "2026",
+    "description": "Jowharat al-Tawhid: Attributes of the Divine · Sundays 9–11am",
+    "time": "9:00–11:00am",
+    "location": "Masjid al-Salaam, Athlone",
+    "fee": {
+      "display": "R350",
+      "is_free": false
+    },
+    "registration_link": "",
+    "published": true
+  },
+  {
+    "title": "Rabi Al-Awwal Dowrah",
+    "day": "23",
+    "month": "Aug",
+    "year": "2026",
+    "description": "The Daughters of Rasulullah ﷺ & their Mother RA · Sun 9am–12pm",
+    "time": "9:00am–12:00pm",
+    "location": "Masjid al-Salaam, Athlone",
+    "fee": {
+      "display": "Free",
+      "is_free": true
+    },
+    "registration_link": "",
+    "published": true
+  },
+  {
+    "title": "4-Week Aqīdah Course (Pt.2)",
+    "day": "30",
+    "month": "Aug",
+    "year": "2026",
+    "description": "Attributes of the Prophets ﷺ & the Afterlife · Sundays 9–11am",
+    "time": "9:00–11:00am",
+    "location": "Masjid al-Salaam, Athlone",
+    "fee": {
+      "display": "R350",
+      "is_free": false
+    },
+    "registration_link": "",
+    "published": true
+  },
+  {
+    "title": "Take a Leap to Speak (Mod.2)",
+    "day": "Oct",
+    "month": "2026",
+    "year": "2026",
+    "description": "6-Week Conversational Arabic · Sundays 9–11am",
+    "time": "9:00–11:00am",
+    "location": "Masjid al-Salaam, Athlone",
+    "fee": {
+      "display": "R750",
+      "is_free": false
+    },
+    "registration_link": "",
+    "published": true
+  }
+]

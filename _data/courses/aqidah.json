@@ -1,0 +1,33 @@
+{
+  "title": "4-Week Aqīdah Course (Pt.1 & Pt.2)",
+  "category": "short",
+  "eyebrow": "4-Week · Short Course",
+  "status": "upcoming",
+  "icon": "✨",
+  "featured": false,
+  "fees": {
+    "display": "R350 per part",
+    "registration": "",
+    "monthly": "",
+    "once_off": "R350 per part",
+    "international": ""
+  },
+  "schedule": {
+    "days": "Sundays",
+    "times": "9:00–11:00am"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person only"
+  },
+  "open_to": "Females only",
+  "dates": "Pt.1: 26 Jul 2026 · Pt.2: 30 Aug 2026",
+  "about": "A two-part study of Jowharat al-Tawhid. Both parts can be taken independently.",
+  "subjects": [
+    "Part 1 — Attributes of the Divine: Jowharat al-Tawhid, a study of the Attributes of Allah. Runs July 2026.",
+    "Part 2 — Attributes of the Prophets & the Afterlife: Continuing from Part 1. Runs August 2026."
+  ],
+  "prerequisites": "",
+  "image": "",
+  "published": true
+}

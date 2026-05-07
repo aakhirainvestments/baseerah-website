@@ -1,0 +1,35 @@
+{
+  "title": "Arabic Mastery Programme",
+  "category": "arabic",
+  "eyebrow": "2-Year Course · Arabic",
+  "status": "active",
+  "icon": "📖",
+  "featured": true,
+  "fees": {
+    "display": "R300 reg · R800/month",
+    "registration": "R300",
+    "monthly": "R800/month (Feb–Dec)",
+    "once_off": "",
+    "international": "USD 30 reg · USD 80/month"
+  },
+  "schedule": {
+    "days": "Mon–Wed",
+    "times": "8:20am–12:40pm"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person + Online (Zoom)"
+  },
+  "open_to": "Females only",
+  "dates": "26 Jan – 27 Nov 2026",
+  "about": "The first of its kind in Cape Town — a comprehensive two-year Arabic journey designed to give you a firm grasp of the Arabic language and its workings. We graduate students who can read, understand, and engage with the Qur'ān and classical texts with real confidence.",
+  "subjects": [
+    "Nahw & I'rab — Grammar, context of words, the art of translation",
+    "Sarf — Morphology, creating words, mastering verbs and their meanings",
+    "Arabic Literature — Qur'ān, Hadith, classical & modern texts, traditional poetry",
+    "Conversational Arabic — Based on the Leap to Speak series"
+  ],
+  "prerequisites": "The ability to read basic Arabic text, or a strong desire to learn and improve these skills.",
+  "image": "",
+  "published": true
+}

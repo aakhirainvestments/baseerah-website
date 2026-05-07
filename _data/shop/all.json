@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Muhadathah Workbook 1 — Take the Leap to Speak",
+    "category": "arabic",
+    "eyebrow": "Conversational Arabic",
+    "description": "The first in the Conversational Arabic series. Designed to unlock Arabic fluency immediately through bite-sized, practical lessons. Adopted by many Hifth schools across SA.",
+    "cover_image": "",
+    "price": {
+      "display": "R220",
+      "amount": 220,
+      "confirmed": true
+    },
+    "badge": {
+      "text": "Bestseller",
+      "color": "teal"
+    },
+    "stock": "in_stock",
+    "author_attribution": true,
+    "published": true
+  },
+  {
+    "title": "Muhadathah Workbook 2 — Take the Leap to Speak",
+    "category": "arabic",
+    "eyebrow": "Conversational Arabic",
+    "description": "The continuation of the Leap to Speak series. Builds on Book 1 with expanded vocabulary, more complex conversations, and practical real-world scenarios.",
+    "cover_image": "",
+    "price": {
+      "display": "R220",
+      "amount": 220,
+      "confirmed": true
+    },
+    "badge": {
+      "text": "New",
+      "color": "new"
+    },
+    "stock": "in_stock",
+    "author_attribution": true,
+    "published": true
+  },
+  {
+    "title": "Hifth Guide — Assisting Your Loved Ones Along Their Hifth Journey",
+    "category": "hifth",
+    "eyebrow": "Hifth",
+    "description": "A practical guide for parents and family members supporting a Hifth student — written with wisdom, warmth, and years of teaching experience.",
+    "cover_image": "",
+    "price": {
+      "display": "TBC",
+      "amount": null,
+      "confirmed": false
+    },
+    "badge": {
+      "text": "",
+      "color": null
+    },
+    "stock": "in_stock",
+    "author_attribution": true,
+    "published": true
+  },
+  {
+    "title": "Hifth Guide — An Educator’s Manual",
+    "category": "hifth",
+    "eyebrow": "Hifth",
+    "description": "Written for Hifth teachers and madrasah educators. A comprehensive manual covering methodology, student management, and curriculum planning for Hifth programmes.",
+    "cover_image": "",
+    "price": {
+      "display": "TBC",
+      "amount": null,
+      "confirmed": false
+    },
+    "badge": {
+      "text": "",
+      "color": null
+    },
+    "stock": "in_stock",
+    "author_attribution": true,
+    "published": true
+  },
+  {
+    "title": "Al-Fiqh Al-Manhajī — The Book of Purification",
+    "category": "fiqh",
+    "eyebrow": "Fiqh",
+    "description": "An accessible English-language study of the laws of purification according to the Shāfiʿī school — clearly structured for students new to Islamic jurisprudence.",
+    "cover_image": "",
+    "price": {
+      "display": "TBC",
+      "amount": null,
+      "confirmed": false
+    },
+    "badge": {
+      "text": "",
+      "color": null
+    },
+    "stock": "in_stock",
+    "author_attribution": false,
+    "published": true
+  },
+  {
+    "title": "Al-Fiqh Al-Manhajī — The Book of Prayer",
+    "category": "fiqh",
+    "eyebrow": "Fiqh",
+    "description": "A clear, structured study of the laws of ṣalāh — covering conditions, pillars, and common questions, written for English-speaking students of Islamic jurisprudence.",
+    "cover_image": "",
+    "price": {
+      "display": "TBC",
+      "amount": null,
+      "confirmed": false
+    },
+    "badge": {
+      "text": "",
+      "color": null
+    },
+    "stock": "in_stock",
+    "author_attribution": false,
+    "published": true
+  }
+]

@@ -1,0 +1,210 @@
+[
+  {
+    "title": "Arabic Mastery Programme",
+    "category": "arabic",
+    "eyebrow": "2-Year Course · Arabic",
+    "status": "active",
+    "icon": "📖",
+    "featured": true,
+    "fees": {
+      "display": "R300 reg · R800/month",
+      "registration": "R300",
+      "monthly": "R800/month (Feb–Dec)",
+      "once_off": "",
+      "international": "USD 30 reg · USD 80/month"
+    },
+    "schedule": {
+      "days": "Mon–Wed",
+      "times": "8:20am–12:40pm"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person + Online (Zoom)"
+    },
+    "open_to": "Females only",
+    "dates": "26 Jan – 27 Nov 2026",
+    "about": "The first of its kind in Cape Town — a comprehensive two-year Arabic journey designed to give you a firm grasp of the Arabic language and its workings. We graduate students who can read, understand, and engage with the Qur'ān and classical texts with real confidence.",
+    "subjects": [
+      "Nahw & I'rab — Grammar, context of words, the art of translation",
+      "Sarf — Morphology, creating words, mastering verbs and their meanings",
+      "Arabic Literature — Qur'ān, Hadith, classical & modern texts, traditional poetry",
+      "Conversational Arabic — Based on the Leap to Speak series"
+    ],
+    "prerequisites": "The ability to read basic Arabic text, or a strong desire to learn and improve these skills.",
+    "image": "",
+    "published": true
+  },
+  {
+    "title": "Ladies Hifth Programme",
+    "category": "hifth",
+    "eyebrow": "Part-Time · Hifth",
+    "status": "active",
+    "icon": "🌙",
+    "featured": false,
+    "fees": {
+      "display": "R300 reg · R900/month",
+      "registration": "R300",
+      "monthly": "R900/month (Feb–Dec)",
+      "once_off": "",
+      "international": ""
+    },
+    "schedule": {
+      "days": "Mon–Thu",
+      "times": "8:20am–12:40pm"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person only"
+    },
+    "open_to": "Females only",
+    "dates": "26 Jan – 27 Nov 2026",
+    "about": "Pioneering an innovative Hifth structure designed for busy moms, mature students, and professionals. Students choose from one of four streams based on their memorisation goal.",
+    "subjects": [
+      "Two Juz — Memorise Juz 29 & 30",
+      "Oft-Recited Suwar — Mulk, Yasin, Sajdah, Waqi'ah, Rahman, Kahf",
+      "Five Suwar — Juz 29, 30, 1, 2, 3",
+      "Full Qur'ān — Complete 30 Juz",
+      "Designated time in class to prepare Sabaq / New Lessons",
+      "Daily Nasihah + Tajwīd from the Murshid al-Qari"
+    ],
+    "prerequisites": "None — except a desire to learn the Book of Allah. Targeted at students aged 20+.",
+    "image": "",
+    "published": true
+  },
+  {
+    "title": "Thursday Arabic Dawrah — The Sealed Nectar",
+    "category": "arabic",
+    "eyebrow": "Weekly · Ongoing",
+    "status": "active",
+    "icon": "📜",
+    "featured": false,
+    "fees": {
+      "display": "Free",
+      "registration": "",
+      "monthly": "",
+      "once_off": "",
+      "international": ""
+    },
+    "schedule": {
+      "days": "Thursdays",
+      "times": "9:00am–12:30pm"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person + Online (Zoom)"
+    },
+    "open_to": "Females only",
+    "dates": "Weekly, ongoing",
+    "about": "A weekly ladies-only gathering studying Al-Rahīq Al-Makhtūm (The Sealed Nectar) — awarded first prize out of 171 manuscripts by the Muslim World League in 1979. Accompanied by selected excerpts from Fiqh al-Sīrah by Shaykh Ramadān al-Būtī.",
+    "subjects": [
+      "Deepen your love for Rasulullah ﷺ",
+      "Learn about his remarkable life, teachings, and character",
+      "Embody his noble traits and qualities in daily life"
+    ],
+    "prerequisites": "",
+    "image": "",
+    "published": true
+  },
+  {
+    "title": "Take a Leap to Speak — Conversational Arabic",
+    "category": "arabic",
+    "eyebrow": "6-Week Course · Short Course",
+    "status": "active",
+    "icon": "💬",
+    "featured": false,
+    "fees": {
+      "display": "R750 total",
+      "registration": "",
+      "monthly": "",
+      "once_off": "R750 total · payable in 2 parts",
+      "international": ""
+    },
+    "schedule": {
+      "days": "Sundays",
+      "times": "9:00–11:00am · 7 practical lessons"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person + Online (Zoom)"
+    },
+    "open_to": "Females only",
+    "dates": "Sundays from Oct 2026 (Module 2)",
+    "about": "A practical, conversation-based Arabic course designed especially for women, focused on helping you actually speak Arabic in your everyday life — from Lesson 1. Facilitated by Shaykhah Rukayya Samsodien. Muhadathah Workbook included in course fee.",
+    "subjects": [
+      "Introduce yourself with confidence",
+      "Ask & answer everyday questions",
+      "Name fruits, groceries, describe your home",
+      "Masculine & feminine words in context",
+      "Real conversations from the very first session"
+    ],
+    "prerequisites": "No prior Arabic knowledge needed.",
+    "image": "",
+    "published": true
+  },
+  {
+    "title": "4-Week Aqīdah Course (Pt.1 & Pt.2)",
+    "category": "short",
+    "eyebrow": "4-Week · Short Course",
+    "status": "upcoming",
+    "icon": "✨",
+    "featured": false,
+    "fees": {
+      "display": "R350 per part",
+      "registration": "",
+      "monthly": "",
+      "once_off": "R350 per part",
+      "international": ""
+    },
+    "schedule": {
+      "days": "Sundays",
+      "times": "9:00–11:00am"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person only"
+    },
+    "open_to": "Females only",
+    "dates": "Pt.1: 26 Jul 2026 · Pt.2: 30 Aug 2026",
+    "about": "A two-part study of Jowharat al-Tawhid. Both parts can be taken independently.",
+    "subjects": [
+      "Part 1 — Attributes of the Divine: Jowharat al-Tawhid, a study of the Attributes of Allah. Runs July 2026.",
+      "Part 2 — Attributes of the Prophets & the Afterlife: Continuing from Part 1. Runs August 2026."
+    ],
+    "prerequisites": "",
+    "image": "",
+    "published": true
+  },
+  {
+    "title": "Special Dowrahs — Dhul Hijjah & Rabi Al-Awwal",
+    "category": "free",
+    "eyebrow": "Free Events · 2026",
+    "status": "upcoming",
+    "icon": "🌿",
+    "featured": false,
+    "fees": {
+      "display": "Free",
+      "registration": "",
+      "monthly": "",
+      "once_off": "",
+      "international": ""
+    },
+    "schedule": {
+      "days": "Saturday / Sunday",
+      "times": "See individual event details"
+    },
+    "location": {
+      "venue": "Masjid al-Salaam, Athlone",
+      "mode": "In-person only"
+    },
+    "open_to": "Open to all",
+    "dates": "23 May 2026 · 23 Aug 2026",
+    "about": "Two special free dowrahs held during blessed Islamic months. All are welcome — no registration fee required.",
+    "subjects": [
+      "Dhul Hijjah Dowrah — 23 May 2026: A historical walk through the Sacred Lands. Saturday, 1pm – Asr.",
+      "Rabi Al-Awwal Dowrah — 23 Aug 2026: The Daughters of Rasulullah ﷺ & their Mother RA. Sunday 9am–12pm."
+    ],
+    "prerequisites": "",
+    "image": "",
+    "published": true
+  }
+]

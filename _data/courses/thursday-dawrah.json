@@ -1,0 +1,34 @@
+{
+  "title": "Thursday Arabic Dawrah — The Sealed Nectar",
+  "category": "arabic",
+  "eyebrow": "Weekly · Ongoing",
+  "status": "active",
+  "icon": "📜",
+  "featured": false,
+  "fees": {
+    "display": "Free",
+    "registration": "",
+    "monthly": "",
+    "once_off": "",
+    "international": ""
+  },
+  "schedule": {
+    "days": "Thursdays",
+    "times": "9:00am–12:30pm"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person + Online (Zoom)"
+  },
+  "open_to": "Females only",
+  "dates": "Weekly, ongoing",
+  "about": "A weekly ladies-only gathering studying Al-Rahīq Al-Makhtūm (The Sealed Nectar) — awarded first prize out of 171 manuscripts by the Muslim World League in 1979. Accompanied by selected excerpts from Fiqh al-Sīrah by Shaykh Ramadān al-Būtī.",
+  "subjects": [
+    "Deepen your love for Rasulullah ﷺ",
+    "Learn about his remarkable life, teachings, and character",
+    "Embody his noble traits and qualities in daily life"
+  ],
+  "prerequisites": "",
+  "image": "",
+  "published": true
+}

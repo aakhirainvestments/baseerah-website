@@ -1,0 +1,15 @@
+{
+  "title": "Dhul Hijjah Dowrah",
+  "day": "23",
+  "month": "May",
+  "year": "2026",
+  "description": "A historical walk through the Sacred Lands",
+  "time": "1pm – Asr",
+  "location": "Masjid al-Salaam, Athlone",
+  "fee": {
+    "display": "Free",
+    "is_free": true
+  },
+  "registration_link": "",
+  "published": true
+}

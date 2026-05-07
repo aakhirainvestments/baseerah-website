@@ -1,0 +1,36 @@
+{
+  "title": "Take a Leap to Speak — Conversational Arabic",
+  "category": "arabic",
+  "eyebrow": "6-Week Course · Short Course",
+  "status": "active",
+  "icon": "💬",
+  "featured": false,
+  "fees": {
+    "display": "R750 total",
+    "registration": "",
+    "monthly": "",
+    "once_off": "R750 total · payable in 2 parts",
+    "international": ""
+  },
+  "schedule": {
+    "days": "Sundays",
+    "times": "9:00–11:00am · 7 practical lessons"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person + Online (Zoom)"
+  },
+  "open_to": "Females only",
+  "dates": "Sundays from Oct 2026 (Module 2)",
+  "about": "A practical, conversation-based Arabic course designed especially for women, focused on helping you actually speak Arabic in your everyday life — from Lesson 1. Facilitated by Shaykhah Rukayya Samsodien. Muhadathah Workbook included in course fee.",
+  "subjects": [
+    "Introduce yourself with confidence",
+    "Ask & answer everyday questions",
+    "Name fruits, groceries, describe your home",
+    "Masculine & feminine words in context",
+    "Real conversations from the very first session"
+  ],
+  "prerequisites": "No prior Arabic knowledge needed.",
+  "image": "",
+  "published": true
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Hifth Guide — An Educator’s Manual",
+  "category": "hifth",
+  "eyebrow": "Hifth",
+  "description": "Written for Hifth teachers and madrasah educators. A comprehensive manual covering methodology, student management, and curriculum planning for Hifth programmes.",
+  "cover_image": "",
+  "price": {
+    "display": "TBC",
+    "amount": null,
+    "confirmed": false
+  },
+  "badge": {
+    "text": "",
+    "color": null
+  },
+  "stock": "in_stock",
+  "author_attribution": true,
+  "published": true
+}

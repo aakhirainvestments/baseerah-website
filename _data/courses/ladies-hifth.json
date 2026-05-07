@@ -1,0 +1,37 @@
+{
+  "title": "Ladies Hifth Programme",
+  "category": "hifth",
+  "eyebrow": "Part-Time · Hifth",
+  "status": "active",
+  "icon": "🌙",
+  "featured": false,
+  "fees": {
+    "display": "R300 reg · R900/month",
+    "registration": "R300",
+    "monthly": "R900/month (Feb–Dec)",
+    "once_off": "",
+    "international": ""
+  },
+  "schedule": {
+    "days": "Mon–Thu",
+    "times": "8:20am–12:40pm"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person only"
+  },
+  "open_to": "Females only",
+  "dates": "26 Jan – 27 Nov 2026",
+  "about": "Pioneering an innovative Hifth structure designed for busy moms, mature students, and professionals. Students choose from one of four streams based on their memorisation goal.",
+  "subjects": [
+    "Two Juz — Memorise Juz 29 & 30",
+    "Oft-Recited Suwar — Mulk, Yasin, Sajdah, Waqi'ah, Rahman, Kahf",
+    "Five Suwar — Juz 29, 30, 1, 2, 3",
+    "Full Qur'ān — Complete 30 Juz",
+    "Designated time in class to prepare Sabaq / New Lessons",
+    "Daily Nasihah + Tajwīd from the Murshid al-Qari"
+  ],
+  "prerequisites": "None — except a desire to learn the Book of Allah. Targeted at students aged 20+.",
+  "image": "",
+  "published": true
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Special Dowrahs — Dhul Hijjah & Rabi Al-Awwal",
+  "category": "free",
+  "eyebrow": "Free Events · 2026",
+  "status": "upcoming",
+  "icon": "🌿",
+  "featured": false,
+  "fees": {
+    "display": "Free",
+    "registration": "",
+    "monthly": "",
+    "once_off": "",
+    "international": ""
+  },
+  "schedule": {
+    "days": "Saturday / Sunday",
+    "times": "See individual event details"
+  },
+  "location": {
+    "venue": "Masjid al-Salaam, Athlone",
+    "mode": "In-person only"
+  },
+  "open_to": "Open to all",
+  "dates": "23 May 2026 · 23 Aug 2026",
+  "about": "Two special free dowrahs held during blessed Islamic months. All are welcome — no registration fee required.",
+  "subjects": [
+    "Dhul Hijjah Dowrah — 23 May 2026: A historical walk through the Sacred Lands. Saturday, 1pm – Asr.",
+    "Rabi Al-Awwal Dowrah — 23 Aug 2026: The Daughters of Rasulullah ﷺ & their Mother RA. Sunday 9am–12pm."
+  ],
+  "prerequisites": "",
+  "image": "",
+  "published": true
+}

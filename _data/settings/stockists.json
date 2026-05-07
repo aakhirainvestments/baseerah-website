@@ -1,0 +1,20 @@
+{
+  "stockists": [
+    {
+      "name": "Baseerah Institute",
+      "logo": "",
+      "description": "Collect directly from us during class hours. Place your order online and we'll arrange a convenient collection time.",
+      "address": "Masjid al-Salaam (upstairs)\n34 St Athans Road, Athlone\nCape Town, 7764\n+27 067 214 4963",
+      "website_url": "",
+      "google_maps_url": "https://maps.google.com/?q=Masjid+al-Salaam+34+St+Athans+Road+Athlone+Cape+Town"
+    },
+    {
+      "name": "Chapter 96 Bookz",
+      "logo": "",
+      "description": "Both Muhadathah Workbooks are available off the shelf at Chapter 96 Bookz in Lansdowne. No pre-order needed.",
+      "address": "Unit 14, 16 Flamingo Crescent\nLansdowne, Cape Town",
+      "website_url": "",
+      "google_maps_url": "https://maps.google.com/?q=Chapter+96+Bookz+Lansdowne+Cape+Town"
+    }
+  ]
+}

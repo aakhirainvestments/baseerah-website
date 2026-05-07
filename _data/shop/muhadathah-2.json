@@ -1,0 +1,19 @@
+{
+  "title": "Muhadathah Workbook 2 — Take the Leap to Speak",
+  "category": "arabic",
+  "eyebrow": "Conversational Arabic",
+  "description": "The continuation of the Leap to Speak series. Builds on Book 1 with expanded vocabulary, more complex conversations, and practical real-world scenarios.",
+  "cover_image": "",
+  "price": {
+    "display": "R220",
+    "amount": 220,
+    "confirmed": true
+  },
+  "badge": {
+    "text": "New",
+    "color": "new"
+  },
+  "stock": "in_stock",
+  "author_attribution": true,
+  "published": true
+}

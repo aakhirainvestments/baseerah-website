@@ -1,0 +1,7 @@
+{
+  "question": "When are monthly fees due?",
+  "answer": "Monthly fees are due by the 3rd of each month. Payment methods accepted: EFT, SnapScan, and PayPal.",
+  "category": "fees",
+  "order": 1,
+  "published": true
+}
