@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses — Baseerah Institute</title>
+
+  <meta name="description" content="Explore Arabic Mastery, Ladies Hifth, Thursday Dawrah, Conversational Arabic and Aqidah courses at Baseerah Institute, Cape Town. In-person and online."/>
+  <meta name="keywords" content="Islamic institute Cape Town, Arabic classes Cape Town, Hifth programme Cape Town, learn Arabic women, female Islamic education South Africa"/>
+  <link rel="canonical" href="https://baseerahinstitute.org/courses.html"/>
+
+  <meta property="og:site_name"   content="Baseerah Institute"/>
+  <meta property="og:type"        content="website"/>
+  <meta property="og:title"       content="Courses — Baseerah Institute"/>
+  <meta property="og:description" content="Arabic Mastery, Ladies Hifth, Conversational Arabic and more — structured programmes for women in Cape Town and online."/>
+  <meta property="og:image"       content="/images/og-default.jpg"/>
+  <meta property="og:url"         content="https://baseerahinstitute.org/courses.html"/>
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="Courses — Baseerah Institute"/>
+  <meta name="twitter:description" content="Arabic Mastery, Ladies Hifth, Conversational Arabic and more — structured programmes for women in Cape Town and online."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="bar-container"></div>
+<div id="nav-container"></div>
+
+<!-- ─── Page Hero ─── -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-text">
+      <span class="eyebrow">2026 Programmes</span>
+      <h1>Our <em>Courses</em></h1>
+      <p>From Hifth al-Qur'ān to Arabic Mastery — structured programmes for women, exactly where they are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Courses List ─── -->
+<section class="courses-page">
+  <div class="wrap">
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" style="margin-bottom:40px">
+      <button class="ftab active" data-filter="all">All Programmes</button>
+      <button class="ftab" data-filter="arabic">Arabic</button>
+      <button class="ftab" data-filter="hifth">Hifth</button>
+      <button class="ftab" data-filter="short">Short Courses</button>
+      <button class="ftab" data-filter="free">Free Events</button>
+    </div>
+
+    <!-- Courses accordion — rendered by app.js -->
+    <div class="courses-list" id="courses-container">
+      <!-- Loading skeletons -->
+      <div class="skeleton-card" style="height:90px;border-radius:var(--r-lg)"></div>
+      <div class="skeleton-card" style="height:90px;border-radius:var(--r-lg);margin-top:16px"></div>
+      <div class="skeleton-card" style="height:90px;border-radius:var(--r-lg);margin-top:16px"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Registration Form ─── -->
+<section class="reg-section" id="register">
+  <div class="wrap">
+    <div class="reg-grid">
+      <div class="reg-text reveal">
+        <span class="eyebrow">Enrol</span>
+        <h2>Register for a Programme</h2>
+        <p>Fill in the form and we'll be in touch within 1–2 business days to confirm your place and next steps, in shā Allah.</p>
+        <p style="font-size:13.5px;color:var(--text-light);margin-top:12px">Prefer to reach out directly? WhatsApp or email us — details in the footer.</p>
+      </div>
+      <div class="form-card reveal">
+        <form id="reg-form" name="course-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/courses.html">
+          <input type="hidden" name="form-name" value="course-registration"/>
+          <input type="hidden" name="bot-field"/>
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" name="name" required placeholder="Fatimah Hendricks"/></div>
+            <div class="form-group"><label>Email Address *</label><input type="email" name="email" required placeholder="you@example.com"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" name="phone" required placeholder="+27 06x xxx xxxx"/></div>
+            <div class="form-group">
+              <label>Programme *</label>
+              <select name="course" id="course-select" required>
+                <option value="">Select a course…</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Preferred Attendance</label>
+            <select name="attendance">
+              <option value="In-person (Athlone)">In-person (Athlone)</option>
+              <option value="Online (Zoom)">Online (Zoom)</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Payment Preference</label>
+            <select name="payment_preference">
+              <option value="online">Pay Registration Fee Online (Yoco / PayFast)</option>
+              <option value="eft">Pay via EFT / SnapScan</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Any questions or notes?</label><textarea name="message" rows="3" placeholder="Optional…"></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Continue →</button>
+          <p class="form-note">No spam. We only use your details to confirm your registration.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="js/components.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -23,3 +23,13 @@
   from = "/blog/post"
   to = "/blog/post.html"
   status = 200
+
+[[redirects]]
+  from = "/donate/thank-you"
+  to = "/donate/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from = "/courses/registration-confirmed"
+  to = "/courses/registration-confirmed.html"
+  status = 200

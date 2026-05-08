@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://baseerahinstitute.org/sitemap.xml
