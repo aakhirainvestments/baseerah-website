@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JazakAllah Khayran — Baseerah Institute</title>
+  <meta property="og:site_name" content="Baseerah Institute"/>
+  <meta property="og:type"      content="website"/>
+  <meta property="og:image"     content="/images/og-default.jpg"/>
+  <meta name="twitter:card"     content="summary_large_image"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .thankyou-wrap {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+    .thankyou-card {
+      background: white;
+      border-radius: var(--r-xl);
+      padding: 64px 52px;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .thankyou-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(ellipse, var(--teal-faint) 0%, transparent 68%);
+      border-radius: 55% 45% 40% 60%;
+      pointer-events: none;
+    }
+    .check-icon {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: var(--teal-faint);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px;
+      position: relative; z-index: 2;
+    }
+    .thankyou-card h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 300; color: var(--charcoal);
+      line-height: 1.15; margin-bottom: 8px;
+      position: relative; z-index: 2;
+    }
+    .thankyou-card .arabic-heading {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 26px; color: var(--teal);
+      direction: rtl; display: block;
+      margin-bottom: 20px;
+      position: relative; z-index: 2;
+    }
+    .thankyou-card > p {
+      font-size: 15.5px; color: var(--text-mid);
+      line-height: 1.78; margin-bottom: 28px;
+      max-width: 460px; margin-left: auto; margin-right: auto;
+      position: relative; z-index: 2;
+    }
+    .donation-summary {
+      background: var(--teal-faint);
+      border: 1.5px solid var(--teal-light);
+      border-radius: var(--r-md);
+      padding: 20px 28px;
+      margin-bottom: 28px;
+      display: flex; justify-content: center; gap: 32px;
+      flex-wrap: wrap;
+      position: relative; z-index: 2;
+    }
+    .ds-item { text-align: center; }
+    .ds-item small {
+      font-size: 10px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--teal-mid);
+      display: block; margin-bottom: 4px;
+    }
+    .ds-item span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 600; color: var(--charcoal);
+    }
+    .hadith-box {
+      background: var(--charcoal);
+      border-radius: var(--r-md);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative; z-index: 2;
+    }
+    .hadith-box p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px; font-style: italic;
+      color: rgba(255,255,255,.78); line-height: 1.72; margin-bottom: 8px;
+    }
+    .hadith-box small {
+      font-size: 11px; color: rgba(255,255,255,.32);
+      letter-spacing: .08em;
+    }
+    .thankyou-actions {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      position: relative; z-index: 2;
+    }
+    @media(max-width: 520px) {
+      .thankyou-card { padding: 48px 28px; }
+      .thankyou-actions { flex-direction: column; }
+      .thankyou-actions .btn { justify-content: center; }
+      .donation-summary { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="bar-container"></div>
+<div id="nav-container"></div>
+
+<div class="thankyou-wrap">
+  <div class="thankyou-card reveal">
+
+    <!-- Checkmark -->
+    <div class="check-icon">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+           stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>JazakAllah Khayran</h1>
+    <span class="arabic-heading">جزاكم الله خيرًا</span>
+    <p>Your contribution keeps sacred knowledge within reach. May Allah accept it from you and multiply it immeasurably.</p>
+
+    <!-- Donation summary from URL params -->
+    <div class="donation-summary" id="donation-summary"></div>
+
+    <!-- Hadith -->
+    <div class="hadith-box">
+      <p>"Whoever guides someone to goodness will have a reward like the one who did it."</p>
+      <small>Sahih Muslim</small>
+    </div>
+
+    <div class="thankyou-actions">
+      <a href="../index.html" class="btn btn-primary">Return Home</a>
+      <a href="../donate.html" class="btn btn-outline">Donate Again</a>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-container"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const type   = decodeURIComponent(params.get('type')   || 'Donation');
+    const amount = params.get('amount') || '—';
+    const el     = document.getElementById('donation-summary');
+    if (!el) return;
+    el.innerHTML = `
+      <div class="ds-item">
+        <small>Donation Type</small>
+        <span>${type}</span>
+      </div>
+      <div class="ds-item">
+        <small>Amount</small>
+        <span style="color:var(--teal)">R${parseFloat(amount).toFixed(2)}</span>
+      </div>`;
+  })();
+</script>
+
+</body>
+</html>

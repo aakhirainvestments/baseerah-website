@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baseerah Institute — Blog</title>
+
+  <!-- Open Graph — filled dynamically by blog.js -->
+  <meta property="og:site_name" content="Baseerah Institute"/>
+  <meta property="og:type"      content="article"/>
+  <meta property="og:title"     content="Baseerah Institute"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:image"     content="/images/og-default.jpg"/>
+  <meta property="og:url"       content=""/>
+  <meta name="twitter:card"     content="summary_large_image"/>
+
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div id="bar-container"></div>
+
+<!-- Nav -->
+<div id="nav-container"></div>
+
+<!-- ─── Post Page Hero ─── -->
+<section class="page-hero" style="padding:100px 0 60px">
+  <div class="wrap">
+    <div class="page-hero-text">
+      <span class="eyebrow">Baseerah Institute · Blog</span>
+      <h1>Insights, <em>reflections</em></h1>
+      <p>Articles on Arabic, Hifth, Fiqh, and the journey of seeking knowledge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Post Content ─── -->
+<section style="padding:60px 0 80px;background:var(--cream)">
+  <div class="wrap" style="max-width:800px">
+
+    <!-- Post rendered here by blog.js -->
+    <div id="post-container">
+      <!-- Loading skeleton -->
+      <div style="text-align:center;padding:60px 0">
+        <div class="skeleton" style="height:380px;border-radius:var(--r-lg);margin-bottom:40px"></div>
+        <div class="skeleton skeleton-line title" style="width:65%;margin:0 auto 16px"></div>
+        <div class="skeleton skeleton-line" style="width:80%;margin:0 auto 10px"></div>
+        <div class="skeleton skeleton-line short" style="width:40%;margin:0 auto"></div>
+      </div>
+    </div>
+
+    <!-- Prev / Next navigation -->
+    <div id="prevnext-container"></div>
+
+    <!-- Related posts -->
+    <div id="related-container"></div>
+
+  </div>
+</section>
+
+<!-- ─── Newsletter ─── -->
+<div id="post-newsletter"></div>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/blog.js"></script>
+
+</body>
+</html>

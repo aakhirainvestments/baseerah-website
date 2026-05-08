@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Received — Baseerah Institute</title>
+
+  <meta property="og:site_name" content="Baseerah Institute"/>
+  <meta property="og:type"      content="website"/>
+  <meta property="og:image"     content="/images/og-default.jpg"/>
+  <meta name="twitter:card"     content="summary_large_image"/>
+
+  <link rel="stylesheet" href="../css/style.css"/>
+
+  <style>
+    .confirmed-wrap {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+    .confirmed-card {
+      background: white;
+      border-radius: var(--r-xl);
+      padding: 56px 48px;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .confirmed-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--teal-faint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .confirmed-card h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .confirmed-card h1 em { font-style: italic; color: var(--teal); }
+    .confirmed-card .arabic {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 22px;
+      color: var(--teal);
+      direction: rtl;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .confirmed-card > p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.78;
+      margin-bottom: 32px;
+    }
+    .order-summary {
+      background: var(--cream-warm);
+      border-radius: var(--r-md);
+      padding: 22px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+    .order-row:last-child { border-bottom: none; }
+    .order-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .order-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-align: right;
+      max-width: 60%;
+    }
+    .confirmed-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media(max-width:520px) {
+      .confirmed-card { padding: 40px 28px; }
+      .confirmed-actions { flex-direction: column; }
+      .confirmed-actions .btn { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div id="bar-container"></div>
+
+<!-- Nav -->
+<div id="nav-container"></div>
+
+<!-- ─── Confirmation ─── -->
+<div class="confirmed-wrap">
+  <div class="confirmed-card reveal">
+
+    <!-- Teal checkmark -->
+    <div class="confirmed-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>Order Received<br/><em>جزاكم الله خيرًا</em></h1>
+    <span class="arabic">جزاكم الله خيرًا</span>
+    <p>We'll confirm your order and collection details within 1 business day. Check your email for confirmation.</p>
+
+    <!-- Order summary — populated from URL params -->
+    <div class="order-summary" id="order-summary">
+      <!-- Populated by script below -->
+    </div>
+
+    <div class="confirmed-actions">
+      <a href="../shop.html" class="btn btn-primary">Continue Shopping</a>
+      <a href="../contact.html" class="btn btn-outline">Contact Us</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+  // Populate order summary from URL params
+  (function () {
+    const params  = new URLSearchParams(window.location.search);
+    const orderId = params.get('order_id') || 'ORD-' + Date.now();
+    const product = params.get('product')  || '—';
+    const amount  = params.get('amount')   || '—';
+    const method  = params.get('method')   || '—';
+
+    const summary = document.getElementById('order-summary');
+    if (!summary) return;
+
+    const rows = [
+      { label: 'Order Reference', value: orderId },
+      { label: 'Product',         value: decodeURIComponent(product) },
+      { label: 'Amount',          value: amount !== '—' ? 'R' + amount : '—' },
+      { label: 'Payment Method',  value: decodeURIComponent(method) },
+    ];
+
+    summary.innerHTML = rows.map(r => `
+      <div class="order-row">
+        <span class="order-label">${r.label}</span>
+        <span class="order-value">${r.value}</span>
+      </div>
+    `).join('');
+
+    // Also call send-confirmation-email function if order_id and email present
+    const email = params.get('email');
+    const name  = params.get('name');
+    if (email && orderId) {
+      fetch('/.netlify/functions/send-confirmation-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customer_email:  decodeURIComponent(email),
+          customer_name:   decodeURIComponent(name  || ''),
+          product:         decodeURIComponent(product),
+          amount:          amount,
+          order_id:        orderId,
+          collection_point: decodeURIComponent(params.get('collection') || ''),
+        })
+      }).catch(() => {}); // silent fail — email is best-effort on client
+    }
+  })();
+</script>
+
+</body>
+</html>

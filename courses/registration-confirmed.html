@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Received — Baseerah Institute</title>
+  <meta property="og:site_name" content="Baseerah Institute"/>
+  <meta property="og:type"      content="website"/>
+  <meta property="og:image"     content="/images/og-default.jpg"/>
+  <meta name="twitter:card"     content="summary_large_image"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .reg-conf-wrap {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 24px;
+      background: var(--cream);
+    }
+    .reg-conf-card {
+      background: white;
+      border-radius: var(--r-xl);
+      padding: 60px 52px;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .reg-conf-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      background: radial-gradient(ellipse, var(--teal-faint) 0%, transparent 68%);
+      border-radius: 55% 45% 40% 60%;
+      pointer-events: none;
+    }
+    .reg-check {
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      background: var(--teal-faint);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      position: relative; z-index: 2;
+    }
+    .reg-conf-card h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 300; color: var(--charcoal);
+      line-height: 1.15; margin-bottom: 8px;
+      position: relative; z-index: 2;
+    }
+    .reg-conf-card .arabic-sub {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 22px; color: var(--teal);
+      direction: rtl; display: block;
+      margin-bottom: 16px;
+      position: relative; z-index: 2;
+    }
+    .reg-conf-card > p {
+      font-size: 15px; color: var(--text-mid);
+      line-height: 1.78; margin-bottom: 28px;
+      max-width: 420px; margin-left: auto; margin-right: auto;
+      position: relative; z-index: 2;
+    }
+    .reg-summary {
+      background: var(--cream-warm);
+      border-radius: var(--r-md);
+      padding: 22px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+      position: relative; z-index: 2;
+    }
+    .reg-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+    .reg-row:last-child { border-bottom: none; }
+    .reg-label {
+      font-size: 10.5px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .reg-value {
+      font-size: 14px; font-weight: 500;
+      color: var(--charcoal); text-align: right; max-width: 60%;
+    }
+    .reg-conf-actions {
+      display: flex; gap: 14px; justify-content: center;
+      flex-wrap: wrap;
+      position: relative; z-index: 2;
+    }
+    @media(max-width: 520px) {
+      .reg-conf-card { padding: 44px 28px; }
+      .reg-conf-actions { flex-direction: column; }
+      .reg-conf-actions .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="bar-container"></div>
+<div id="nav-container"></div>
+
+<div class="reg-conf-wrap">
+  <div class="reg-conf-card reveal">
+
+    <!-- Check icon -->
+    <div class="reg-check">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none"
+           stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h1>Registration Received</h1>
+    <span class="arabic-sub">جزاكم الله خيرًا</span>
+    <p>We'll be in touch within 1–2 business days to confirm your place, in shā Allah.</p>
+
+    <!-- Summary from URL params -->
+    <div class="reg-summary" id="reg-summary"></div>
+
+    <div class="reg-conf-actions">
+      <a href="../courses.html" class="btn btn-primary">View Courses</a>
+      <a href="../contact.html" class="btn btn-outline">Contact Us</a>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-container"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const course = decodeURIComponent(params.get('course') || '—');
+    const amount = params.get('amount') || null;
+    const id     = params.get('id')     || '—';
+    const el     = document.getElementById('reg-summary');
+    if (!el) return;
+
+    const rows = [
+      { label: 'Reference',  value: id },
+      { label: 'Course',     value: course },
+    ];
+    if (amount) rows.push({ label: 'Amount Paid', value: `R${parseFloat(amount).toFixed(2)}` });
+
+    el.innerHTML = rows.map(r => `
+      <div class="reg-row">
+        <span class="reg-label">${r.label}</span>
+        <span class="reg-value">${r.value}</span>
+      </div>`).join('');
+  })();
+</script>
+
+</body>
+</html>
