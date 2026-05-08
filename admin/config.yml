@@ -92,6 +92,24 @@ collections:
       - { name: registration_link, label: Registration Link, widget: string, required: false }
       - { name: published, label: Published, widget: boolean, default: true }
 
+  - label: "Registration Form Fields"
+    name: "form_fields"
+    widget: "list"
+    required: false
+    hint: "Add custom fields for event registration form"
+    fields:
+      - { label: "Field Label", name: "label", widget: "string" }
+      - label: "Field Type"
+        name: "type"
+        widget: "select"
+        options: ["text", "email", "tel", "select", "textarea", "checkbox"]
+      - { label: "Required?", name: "required", widget: "boolean", default: true }
+      - { label: "Options (for select fields, comma separated)", name: "options", widget: "string", required: false }
+  - { label: "Registration Fee", name: "registration_fee", widget: "number", required: false }
+  - { label: "Registration Open?", name: "registration_open", widget: "boolean", default: false }
+  - { label: "Max Attendees", name: "max_attendees", widget: "number", required: false }
+  - { label: "Registration Deadline", name: "registration_deadline", widget: "datetime", required: false }
+
   # ─── BLOG POSTS ────────────────────────────────────────────
   - name: blog
     label: Blog Posts
@@ -314,3 +332,37 @@ collections:
               - { name: address, label: Address, widget: text }
               - { name: website_url, label: Website URL, widget: string, required: false }
               - { name: google_maps_url, label: Google Maps URL, widget: string, required: false }
+
+     - name: "donations"
+        label: "Donations"
+        label_singular: "Donation"
+        folder: "_data/donations"
+        create: true
+        slug: "{{year}}-{{month}}-{{day}}-{{fields.donor_name}}"
+        format: json
+        extension: json
+        fields:
+          - { label: "Donor Name", name: "donor_name", widget: "string" }
+          - { label: "Email", name: "donor_email", widget: "string" }
+          - { label: "Amount (ZAR)", name: "amount", widget: "number" }
+          - label: "Donation Type"
+            name: "donation_type"
+            widget: "select"
+            options: ["Zakaat", "Lillah", "Sadaqah", "Sponsor a Student", "General"]
+          - label: "Payment Method"
+            name: "payment_method"
+            widget: "select"
+            options: ["Yoco", "PayFast", "EFT", "SnapScan", "PayPal"]
+          - label: "Payment Status"
+            name: "payment_status"
+            widget: "select"
+            options: ["pending", "confirmed", "failed"]
+            default: "confirmed"
+          - { label: "Date", name: "date", widget: "datetime" }
+          - { label: "Notes", name: "notes", widget: "text", required: false }
+
+      
+        
+
+
+      
