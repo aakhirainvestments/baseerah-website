@@ -1,0 +1,361 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  # ─── COURSES ───────────────────────────────────────────────
+  - name: courses
+    label: Courses
+    folder: _data/courses
+    create: true
+    extension: json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: category
+        label: Category
+        widget: select
+        options: [arabic, hifth, short, free]
+      - { name: eyebrow, label: Eyebrow, widget: string }
+      - name: status
+        label: Status
+        widget: select
+        default: active
+        options: [active, upcoming, closed, waitlist]
+      - { name: icon, label: "Icon (emoji)", widget: string, default: "📖" }
+      - { name: featured, label: Featured, widget: boolean, default: false }
+      - name: fees
+        label: Fees
+        widget: object
+        fields:
+          - { name: display, label: "Display (e.g. R350/month or Free)", widget: string, required: false }
+          - { name: registration, label: Registration Fee, widget: string, required: false }
+          - { name: monthly, label: Monthly Fee, widget: string, required: false }
+          - { name: once_off, label: Once-Off Fee, widget: string, required: false }
+          - { name: international, label: International Fee, widget: string, required: false }
+      - name: schedule
+        label: Schedule
+        widget: object
+        fields:
+          - { name: days, label: Days, widget: string }
+          - { name: times, label: Times, widget: string }
+      - name: location
+        label: Location
+        widget: object
+        fields:
+          - { name: venue, label: Venue, widget: string, default: "Masjid al-Salaam, Athlone" }
+          - name: mode
+            label: Mode
+            widget: select
+            options:
+              - "In-person only"
+              - "Online only"
+              - "In-person + Online (Zoom)"
+      - { name: open_to, label: Open To, widget: string, default: "Females only" }
+      - { name: dates, label: Dates, widget: string }
+      - { name: about, label: About, widget: text }
+      - name: subjects
+        label: Subjects
+        widget: list
+        field: { name: subject, label: Subject, widget: string }
+      - { name: prerequisites, label: Prerequisites, widget: text, required: false }
+      - { name: image, label: Image, widget: image, required: false }
+      - { name: published, label: Published, widget: boolean, default: true }
+
+  # ─── EVENTS ────────────────────────────────────────────────
+  - name: events
+    label: Events
+    folder: _data/events
+    create: true
+    extension: json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: day, label: Day, widget: string, hint: "e.g. 23 or Oct" }
+      - { name: month, label: Month, widget: string }
+      - { name: year, label: Year, widget: string, default: "2026" }
+      - { name: description, label: Description, widget: text }
+      - { name: time, label: Time, widget: string }
+      - { name: location, label: Location, widget: string, required: false }
+      - name: fee
+        label: Fee
+        widget: object
+        fields:
+          - { name: display, label: "Display (e.g. R350 or Free)", widget: string }
+          - { name: is_free, label: Free Event, widget: boolean, default: false }
+      - { name: registration_fee, label: Registration Fee, widget: number, required: false }
+      - { name: registration_open, label: Registration Open, widget: boolean, default: false }
+      - { name: max_attendees, label: Max Attendees, widget: number, required: false }
+      - { name: registration_deadline, label: Registration Deadline, widget: datetime, required: false }
+      - name: form_fields
+        label: Custom Form Fields
+        widget: list
+        required: false
+        hint: "Add custom fields for event registration form"
+        fields:
+          - { name: label, label: Field Label, widget: string }
+          - name: type
+            label: Field Type
+            widget: select
+            options: [text, email, tel, select, textarea, checkbox]
+          - { name: required, label: Required, widget: boolean, default: true }
+          - { name: options, label: "Options (comma separated, for select only)", widget: string, required: false }
+      - { name: registration_link, label: Registration Link, widget: string, required: false }
+      - { name: published, label: Published, widget: boolean, default: true }
+
+  # ─── BLOG POSTS ────────────────────────────────────────────
+  - name: blog
+    label: Blog Posts
+    folder: _data/blog
+    create: true
+    extension: json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: category
+        label: Category
+        widget: select
+        options: [arabic, hifth, fiqh, institute]
+      - { name: author, label: Author, widget: string, default: "Shaykhah Rukayya Samsodien" }
+      - { name: date, label: Date, widget: datetime }
+      - { name: excerpt, label: Excerpt, widget: text }
+      - { name: body, label: Body, widget: markdown }
+      - { name: cover_image, label: Cover Image, widget: image, required: false }
+      - { name: audio_file, label: Audio File, widget: file, required: false }
+      - { name: pdf_file, label: PDF File, widget: file, required: false }
+      - { name: youtube_embed, label: YouTube URL, widget: string, required: false, hint: "Paste full YouTube URL" }
+      - { name: published, label: Published, widget: boolean, default: false }
+
+  # ─── SHOP PRODUCTS ─────────────────────────────────────────
+  - name: shop
+    label: Shop Products
+    folder: _data/shop
+    create: true
+    extension: json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: category
+        label: Category
+        widget: select
+        options: [arabic, hifth, fiqh]
+      - { name: eyebrow, label: Eyebrow, widget: string }
+      - { name: description, label: Description, widget: text }
+      - { name: cover_image, label: Cover Image, widget: image, required: false }
+      - name: price
+        label: Price
+        widget: object
+        fields:
+          - { name: display, label: "Display (e.g. R220 or TBC)", widget: string }
+          - { name: amount, label: Amount (number), widget: number, required: false }
+          - { name: confirmed, label: Price Confirmed, widget: boolean, default: true }
+      - name: badge
+        label: Badge
+        widget: object
+        fields:
+          - { name: text, label: Badge Text, widget: string, required: false }
+          - name: color
+            label: Badge Color
+            widget: select
+            required: false
+            options: [teal, gold, new]
+      - name: stock
+        label: Stock Status
+        widget: select
+        default: in_stock
+        options: [in_stock, low_stock, out_of_stock, coming_soon]
+      - { name: author_attribution, label: Show Author Attribution, widget: boolean, default: false, hint: "Only enable if authored by Shaykhah Rukayya" }
+      - { name: published, label: Published, widget: boolean, default: true }
+
+  # ─── ORDERS ────────────────────────────────────────────────
+  - name: orders
+    label: Orders
+    folder: _data/orders
+    create: true
+    extension: json
+    format: json
+    identifier_field: order_id
+    fields:
+      - { name: order_id, label: Order ID, widget: string }
+      - { name: customer_name, label: Customer Name, widget: string }
+      - { name: customer_email, label: Customer Email, widget: string }
+      - { name: customer_phone, label: Customer Phone, widget: string }
+      - { name: product, label: Product, widget: string }
+      - { name: quantity, label: Quantity, widget: number, default: 1 }
+      - { name: amount, label: "Amount (R)", widget: number }
+      - name: payment_method
+        label: Payment Method
+        widget: select
+        options: [Yoco, PayFast, EFT, SnapScan, PayPal]
+      - name: payment_status
+        label: Payment Status
+        widget: select
+        default: pending
+        options: [pending, paid, failed, refunded]
+      - { name: order_date, label: Order Date, widget: datetime }
+      - { name: collection_point, label: Collection Point, widget: string, required: false }
+      - { name: notes, label: Notes, widget: text, required: false }
+
+  # ─── DONATIONS ─────────────────────────────────────────────
+  - name: donations
+    label: Donations
+    folder: _data/donations
+    create: true
+    extension: json
+    format: json
+    identifier_field: donor_name
+    fields:
+      - { name: donor_name, label: Donor Name, widget: string }
+      - { name: donor_email, label: Email, widget: string }
+      - { name: amount, label: "Amount (ZAR)", widget: number }
+      - name: donation_type
+        label: Donation Type
+        widget: select
+        options: [Zakaat, Lillah, Sadaqah, "Sponsor a Student", General]
+      - name: payment_method
+        label: Payment Method
+        widget: select
+        options: [Yoco, PayFast, EFT, SnapScan, PayPal]
+      - name: payment_status
+        label: Payment Status
+        widget: select
+        default: confirmed
+        options: [pending, confirmed, failed]
+      - { name: date, label: Date, widget: datetime }
+      - { name: notes, label: Notes, widget: text, required: false }
+
+  # ─── COURSE REGISTRATIONS ──────────────────────────────────
+  - name: registrations
+    label: Course Registrations
+    folder: _data/registrations
+    create: true
+    extension: json
+    format: json
+    identifier_field: student_name
+    fields:
+      - { name: student_name, label: Student Name, widget: string }
+      - { name: email, label: Email, widget: string }
+      - { name: phone, label: Phone, widget: string }
+      - { name: course, label: Course, widget: string }
+      - name: attendance
+        label: Attendance
+        widget: select
+        options:
+          - "In-person (Athlone)"
+          - "Online (Zoom)"
+          - "Not sure yet"
+      - { name: date, label: Date, widget: datetime }
+      - name: payment_status
+        label: Payment Status
+        widget: select
+        default: unpaid
+        options: [unpaid, registration_fee_paid, monthly_active, overdue, sponsored, withdrawn]
+      - { name: amount_paid, label: "Amount Paid (R)", widget: number, default: 0 }
+      - { name: sponsor, label: Sponsor, widget: string, required: false }
+      - { name: notes, label: Notes, widget: text, required: false }
+
+  # ─── FAQs ──────────────────────────────────────────────────
+  - name: faqs
+    label: FAQs
+    folder: _data/faqs
+    create: true
+    extension: json
+    format: json
+    identifier_field: question
+    fields:
+      - { name: question, label: Question, widget: string }
+      - { name: answer, label: Answer, widget: text }
+      - name: category
+        label: Category
+        widget: select
+        options: [general, courses, fees, hifth, arabic]
+      - { name: order, label: Order, widget: number, hint: "Lower numbers appear first" }
+      - { name: published, label: Published, widget: boolean, default: true }
+
+  # ─── SITE SETTINGS ─────────────────────────────────────────
+  - name: settings
+    label: Site Settings
+    files:
+
+      - name: global
+        label: Global Info
+        file: _data/settings/global.json
+        fields:
+          - { name: phone, label: Phone, widget: string }
+          - { name: email, label: Email, widget: string }
+          - { name: instagram, label: Instagram Handle, widget: string }
+          - { name: instagram_url, label: Instagram URL, widget: string }
+          - { name: facebook_url, label: Facebook URL, widget: string }
+          - { name: whatsapp_channel_url, label: WhatsApp Channel URL, widget: string }
+          - { name: address_line1, label: Address Line 1, widget: string }
+          - { name: address_line2, label: Address Line 2, widget: string }
+          - { name: bank_name, label: Bank Name, widget: string }
+          - { name: bank_account, label: Bank Account Number, widget: string }
+          - { name: bank_branch, label: Branch Code, widget: string }
+          - { name: bank_account_type, label: Account Type, widget: string }
+          - { name: bank_account_name, label: Account Name, widget: string }
+          - { name: paypal_link, label: PayPal Link, widget: string }
+          - { name: snapscan_qr, label: SnapScan QR Image, widget: image, required: false }
+          - { name: announcement_text, label: Announcement Bar Text, widget: string }
+          - { name: announcement_link, label: Announcement Bar Link, widget: string }
+          - { name: footer_description, label: Footer Description, widget: string }
+          - { name: npc_number, label: NPC Number, widget: string }
+
+      - name: hero
+        label: Hero Slides
+        file: _data/settings/hero.json
+        fields:
+          - name: slides
+            label: Slides
+            widget: list
+            fields:
+              - { name: eyebrow, label: Eyebrow, widget: string }
+              - { name: heading1, label: Heading Line 1, widget: string }
+              - { name: heading2_teal, label: "Heading Line 2 (teal)", widget: string }
+              - { name: subtext, label: Subtext, widget: text, required: false }
+              - { name: arabic_text, label: Arabic Text, widget: string, required: false }
+              - { name: arabic_ref, label: Arabic Reference, widget: string, required: false }
+              - { name: btn_primary_text, label: Primary Button Text, widget: string }
+              - { name: btn_primary_link, label: Primary Button Link, widget: string }
+              - { name: btn_secondary_text, label: Secondary Button Text, widget: string, required: false }
+              - { name: btn_secondary_link, label: Secondary Button Link, widget: string, required: false }
+              - { name: bg_image, label: Background Image, widget: image }
+
+      - name: teacher
+        label: Teacher Profile
+        file: _data/settings/teacher.json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: title, label: Title / Role, widget: string }
+          - { name: credential_text, label: Credentials, widget: string }
+          - { name: bio_paragraph_1, label: Bio Paragraph 1, widget: text }
+          - { name: bio_paragraph_2, label: Bio Paragraph 2, widget: text }
+          - { name: bio_paragraph_3, label: Bio Paragraph 3, widget: text }
+          - { name: photo, label: Photo, widget: image }
+          - name: publications
+            label: Publications
+            widget: list
+            field: { name: title, label: Title, widget: string }
+
+      - name: stockists
+        label: Stockists
+        file: _data/settings/stockists.json
+        fields:
+          - name: stockists
+            label: Stockists
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: logo, label: Logo, widget: image, required: false }
+              - { name: description, label: Description, widget: string }
+              - { name: address, label: Address, widget: text }
+              - { name: website_url, label: Website URL, widget: string, required: false }
+              - { name: google_maps_url, label: Google Maps URL, widget: string, required: false }
