@@ -4,10 +4,345 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Baseerah Institute — CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --b-teal:     #009EA8;
+      --b-teal-mid: #007A82;
+      --b-teal-lt:  #E0F5F7;
+      --b-charcoal: #1A1A2E;
+      --b-cream:    #FAF8F4;
+      --b-gold:     #B8872E;
+      --b-text:     #3A3848;
+      --b-mid:      #6B6880;
+    }
+
+    /* ── App shell & sidebar ── */
+    [class*="App-header"],
+    [class*="AppHeader"],
+    header[class*="css-"] {
+      background: var(--b-charcoal) !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+    [class*="Sidebar"],
+    aside[class*="css-"] {
+      background: var(--b-charcoal) !important;
+    }
+    [class*="Sidebar"] *,
+    aside[class*="css-"] * {
+      color: rgba(255,255,255,.65) !important;
+    }
+    [class*="Sidebar"] a:hover,
+    [class*="SidebarNavLink"]:hover {
+      color: var(--b-teal) !important;
+    }
+    [class*="CollectionTitle"][class*="active"],
+    [class*="SidebarNavLink"][class*="active"],
+    nav a[class*="active"] {
+      color: var(--b-teal) !important;
+      border-left-color: var(--b-teal) !important;
+    }
+    [class*="CollectionLabel"],
+    [class*="SectionLabel"] {
+      font-size: 9.5px !important;
+      letter-spacing: .18em !important;
+      text-transform: uppercase !important;
+      color: rgba(255,255,255,.3) !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+    [class*="CollectionTitle"],
+    [class*="SidebarNavLink"],
+    nav[class*="css-"] a {
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 12.5px !important;
+      letter-spacing: .06em !important;
+    }
+
+    /* ── Main editor area ── */
+    [class*="EditorContainer"],
+    [class*="EditorInterface"],
+    main[class*="css-"] {
+      background: var(--b-cream) !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+
+    /* ── Toolbar ── */
+    [class*="Toolbar"],
+    [class*="EditorToolbar"] {
+      background: white !important;
+      border-bottom: 1px solid #E8E0D3 !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+
+    /* ── Buttons ── */
+    button[class*="success"],
+    button[class*="primary"],
+    [class*="PublishButton"],
+    [class*="Button"][class*="primary"],
+    [class*="NewEntryButton"],
+    a[class*="new-entry"] {
+      background: var(--b-teal) !important;
+      border-color: var(--b-teal) !important;
+      border-radius: 100px !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      letter-spacing: .08em !important;
+      text-transform: uppercase !important;
+    }
+    button[class*="success"]:hover,
+    button[class*="primary"]:hover,
+    [class*="NewEntryButton"]:hover {
+      background: var(--b-teal-mid) !important;
+    }
+    button[class*="default"],
+    [class*="Button"][class*="default"] {
+      border-radius: 100px !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 12px !important;
+      letter-spacing: .06em !important;
+    }
+    button[class*="danger"] { border-radius: 100px !important; }
+
+    /* ── Form fields ── */
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="search"],
+    select,
+    textarea {
+      font-family: 'DM Sans', sans-serif !important;
+      border-radius: 12px !important;
+      border-color: #E8E0D3 !important;
+      background: white !important;
+      font-size: 14px !important;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--b-teal) !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(0,158,168,.12) !important;
+    }
+    label,
+    [class*="FieldLabel"],
+    [class*="Label"] {
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      letter-spacing: .12em !important;
+      text-transform: uppercase !important;
+      color: var(--b-mid) !important;
+    }
+
+    /* ── Entry cards ── */
+    [class*="ListCard"],
+    [class*="EntryCard"],
+    [class*="Collection"] li {
+      border-radius: 16px !important;
+      border-color: #E8E0D3 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      transition: box-shadow .25s ease, border-color .25s ease !important;
+    }
+    [class*="ListCard"]:hover,
+    [class*="EntryCard"]:hover {
+      box-shadow: 0 8px 32px rgba(26,26,46,.1) !important;
+      border-color: var(--b-teal) !important;
+    }
+    [class*="CardTitle"],
+    [class*="EntryTitle"] {
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: var(--b-charcoal) !important;
+    }
+
+    /* ── Status badges ── */
+    [class*="StatusBadge"],
+    [class*="WorkflowCard"] [class*="status"] {
+      border-radius: 100px !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: .1em !important;
+      text-transform: uppercase !important;
+    }
+
+    /* ── Login screen ── */
+    [class*="AuthenticationPage"],
+    [class*="LoginPage"] {
+      background: var(--b-charcoal) !important;
+    }
+    [class*="AuthenticationPage"] h1,
+    [class*="LoginPage"] h1 {
+      font-family: 'Cormorant Garamond', serif !important;
+      font-weight: 300 !important;
+      color: white !important;
+    }
+
+    /* ── Image widget ── */
+    [class*="ImageCard"],
+    [class*="ImagePreview"] {
+      border-radius: 12px !important;
+      border-color: #E8E0D3 !important;
+    }
+
+    /* ── Toggle / boolean ── */
+    input[type="checkbox"]:checked + span {
+      background: var(--b-teal) !important;
+    }
+
+    /* ── Editor page title ── */
+    [class*="EditorHeader"] h1,
+    [class*="EditorHeader"] h2 {
+      font-family: 'Cormorant Garamond', serif !important;
+      font-weight: 300 !important;
+      color: var(--b-charcoal) !important;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,158,168,.3); border-radius: 100px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--b-teal); }
+  </style>
 </head>
 <body>
-  <!-- Netlify Identity Widget — required for invite token handling -->
+
+  <!-- Netlify Identity Widget — required for invite/recovery token handling -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Manual init so we can register preview styles before CMS boots -->
+  <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    // ── Preview styles (shown in the preview pane) ────────────
+    CMS.registerPreviewStyle(
+      'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Noto+Naskh+Arabic:wght@400;700&display=swap',
+      { raw: false }
+    );
+    CMS.registerPreviewStyle('/css/style.css');
+
+    // ── Blog post preview ─────────────────────────────────────
+    var BlogPreview = createClass({
+      render: function () {
+        var e  = this.props.entry;
+        var title   = e.getIn(['data','title'])    || 'Untitled';
+        var excerpt = e.getIn(['data','excerpt'])  || '';
+        var body    = e.getIn(['data','body'])     || '';
+        var cat     = e.getIn(['data','category']) || '';
+        var author  = e.getIn(['data','author'])   || 'Shaykhah Rukayya Samsodien';
+        var labels  = { arabic:'Arabic', hifth:'Hifth', fiqh:'Fiqh & Tazkiya', institute:'Institute News' };
+
+        return h('div', { style: { fontFamily:"'DM Sans',sans-serif", background:'#FAF8F4', padding:'48px', maxWidth:'720px', margin:'0 auto' } },
+          h('span', { style: { fontSize:'10px', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', background:'#009EA8', color:'white', padding:'5px 14px', borderRadius:'100px' } },
+            labels[cat] || cat),
+          h('h1', { style: { fontFamily:"'Cormorant Garamond',serif", fontSize:'52px', fontWeight:300, fontStyle:'italic', color:'#1A1A2E', lineHeight:1.05, margin:'20px 0 14px' } }, title),
+          h('p',  { style: { fontSize:'16px', color:'#009EA8', lineHeight:1.7, marginBottom:'8px', fontStyle:'italic' } }, excerpt),
+          h('p',  { style: { fontSize:'12px', color:'#9896AA', marginBottom:'36px' } }, 'by ' + author),
+          h('hr', { style: { border:'none', borderTop:'1px solid #E8E0D3', margin:'28px 0' } }),
+          h('div', {
+            style: { fontSize:'15.5px', lineHeight:1.9, color:'#3A3848' },
+            dangerouslySetInnerHTML: { __html: (body || '').replace(/\n\n/g,'</p><p>').replace(/^/,'<p>').replace(/$/,'</p>') }
+          })
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('blog', BlogPreview);
+
+    // ── Course preview ────────────────────────────────────────
+    var CoursePreview = createClass({
+      render: function () {
+        var e = this.props.entry;
+        var title   = e.getIn(['data','title'])        || 'Untitled';
+        var eyebrow = e.getIn(['data','eyebrow'])      || '';
+        var about   = e.getIn(['data','about'])        || '';
+        var icon    = e.getIn(['data','icon'])         || '📖';
+        var status  = e.getIn(['data','status'])       || 'active';
+        var fees    = e.getIn(['data','fees','display'])|| '';
+        var days    = e.getIn(['data','schedule','days'])  || '';
+        var times   = e.getIn(['data','schedule','times']) || '';
+        var mode    = e.getIn(['data','location','mode'])  || '';
+        var statusColors = { active:'#009EA8', upcoming:'#B8872E', closed:'#9896AA', waitlist:'#B8872E' };
+
+        return h('div', { style: { fontFamily:"'DM Sans',sans-serif", background:'white', borderRadius:'24px', padding:'36px', maxWidth:'700px', margin:'24px auto', boxShadow:'0 8px 40px rgba(26,26,46,.09)' } },
+          h('div', { style: { display:'flex', alignItems:'center', gap:'16px', marginBottom:'20px' } },
+            h('div', { style: { width:'52px', height:'52px', background:'#E0F5F7', borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'22px', flexShrink:0 } }, icon),
+            h('div', {},
+              h('p',  { style: { fontSize:'10px', fontWeight:700, letterSpacing:'.18em', textTransform:'uppercase', color:'#009EA8', margin:'0 0 4px' } }, eyebrow),
+              h('h2', { style: { fontFamily:"'Cormorant Garamond',serif", fontSize:'26px', fontWeight:600, color:'#1A1A2E', margin:0, lineHeight:1.2 } }, title)
+            ),
+            h('span', { style: { marginLeft:'auto', fontSize:'11px', fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', background:'#E0F5F7', color: statusColors[status] || '#009EA8', padding:'4px 12px', borderRadius:'100px' } }, status)
+          ),
+          h('p', { style: { fontSize:'14.5px', color:'#6B6880', lineHeight:1.8, marginBottom:'20px' } }, about),
+          h('div', { style: { display:'flex', gap:'10px', flexWrap:'wrap' } },
+            fees ? h('span', { style: { fontSize:'11.5px', fontWeight:600, color:'#009EA8', background:'#EFF9FA', padding:'4px 12px', borderRadius:'100px' } }, fees) : null,
+            days ? h('span', { style: { fontSize:'11.5px', fontWeight:600, color:'#6B6880', background:'#F2EDE4', padding:'4px 12px', borderRadius:'100px' } }, days + (times ? ' · ' + times : '')) : null,
+            mode ? h('span', { style: { fontSize:'11.5px', fontWeight:600, color:'#6B6880', background:'#F2EDE4', padding:'4px 12px', borderRadius:'100px' } }, mode) : null
+          )
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('courses', CoursePreview);
+
+    // ── Shop product preview ──────────────────────────────────
+    var ShopPreview = createClass({
+      render: function () {
+        var e = this.props.entry;
+        var title  = e.getIn(['data','title'])         || 'Untitled';
+        var eyebrow= e.getIn(['data','eyebrow'])       || '';
+        var desc   = e.getIn(['data','description'])   || '';
+        var price  = e.getIn(['data','price','display'])|| 'TBC';
+        var badge  = e.getIn(['data','badge','text'])  || '';
+        var badgeC = e.getIn(['data','badge','color']) || 'teal';
+        var author = e.getIn(['data','author_attribution']) || false;
+        var badgeColors = { teal:'#009EA8', gold:'#B8872E', new:'#1A1A2E' };
+
+        return h('div', { style: { fontFamily:"'DM Sans',sans-serif", background:'white', borderRadius:'24px', overflow:'hidden', maxWidth:'320px', margin:'24px auto', boxShadow:'0 8px 40px rgba(26,26,46,.09)' } },
+          h('div', { style: { height:'200px', background:'#E0F5F7', display:'flex', alignItems:'center', justifyContent:'center', position:'relative' } },
+            h('span', { style: { fontSize:'48px' } }, '📚'),
+            badge ? h('span', { style: { position:'absolute', top:'14px', left:'14px', fontSize:'10px', fontWeight:700, letterSpacing:'.12em', textTransform:'uppercase', background: badgeColors[badgeC] || '#009EA8', color:'white', padding:'4px 12px', borderRadius:'100px' } }, badge) : null
+          ),
+          h('div', { style: { padding:'24px' } },
+            h('p',  { style: { fontSize:'10px', fontWeight:700, letterSpacing:'.18em', textTransform:'uppercase', color:'#009EA8', margin:'0 0 6px' } }, eyebrow),
+            h('h3', { style: { fontFamily:"'Cormorant Garamond',serif", fontSize:'20px', fontWeight:600, color:'#1A1A2E', margin:'0 0 4px', lineHeight:1.3 } }, title),
+            author ? h('p', { style: { fontSize:'12px', color:'#007A82', fontStyle:'italic', margin:'0 0 8px' } }, 'by Shaykhah Rukayya Samsodien') : null,
+            h('p',  { style: { fontSize:'13px', color:'#6B6880', lineHeight:1.7, margin:'0 0 16px' } }, desc),
+            h('div', { style: { display:'flex', alignItems:'center', justifyContent:'space-between', paddingTop:'12px', borderTop:'1px solid #E8E0D3' } },
+              h('span', { style: { fontFamily:"'Cormorant Garamond',serif", fontSize:'26px', fontWeight:600, color:'#1A1A2E' } }, price),
+              h('button', { style: { background:'#009EA8', color:'white', border:'none', borderRadius:'100px', padding:'10px 18px', fontSize:'12px', fontWeight:600, cursor:'pointer' } }, 'Order')
+            )
+          )
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('shop', ShopPreview);
+
+    // ── Init CMS ──────────────────────────────────────────────
+    CMS.init();
+
+    // ── Inject Baseerah logo into CMS header ──────────────────
+    function injectLogo() {
+      var header = document.querySelector('[class*="AppHeader"]')
+        || document.querySelector('header[class*="css-"]')
+        || document.querySelector('[class*="App-header"]');
+      if (!header || header.querySelector('.b-logo')) return false;
+
+      var logo = document.createElement('img');
+      logo.src       = '/logo-white.png';
+      logo.alt       = 'Baseerah Institute';
+      logo.className = 'b-logo';
+      logo.style.cssText = 'height:38px;width:auto;margin-right:20px;opacity:.9;order:-1;flex-shrink:0;';
+      header.style.cssText += 'display:flex!important;align-items:center!important;';
+      header.prepend(logo);
+      return true;
+    }
+
+    var _attempts = 0;
+    var _logoTimer = setInterval(function () {
+      if (injectLogo() || _attempts++ > 60) clearInterval(_logoTimer);
+    }, 200);
+  </script>
 </body>
 </html>

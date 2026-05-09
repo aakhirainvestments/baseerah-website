@@ -5,6 +5,9 @@ backend:
 media_folder: images/uploads
 public_folder: /images/uploads
 
+display_url: https://baseerahinstitute1.netlify.app
+publish_mode: editorial_workflow
+
 collections:
 
   # ─── COURSES ───────────────────────────────────────────────
@@ -27,13 +30,13 @@ collections:
         widget: select
         default: active
         options: [active, upcoming, closed, waitlist]
-      - { name: icon, label: "Icon (emoji)", widget: string, default: "📖" }
+      - { name: icon, label: Icon (emoji), widget: string, default: "📖" }
       - { name: featured, label: Featured, widget: boolean, default: false }
       - name: fees
         label: Fees
         widget: object
         fields:
-          - { name: display, label: "Display (e.g. R350/month or Free)", widget: string, required: false }
+          - { name: display, label: "Display (e.g. R350/month or Free)", widget: string, hint: "Simple display shown on site", required: false }
           - { name: registration, label: Registration Fee, widget: string, required: false }
           - { name: monthly, label: Monthly Fee, widget: string, required: false }
           - { name: once_off, label: Once-Off Fee, widget: string, required: false }
@@ -87,26 +90,26 @@ collections:
         label: Fee
         widget: object
         fields:
-          - { name: display, label: "Display (e.g. R350 or Free)", widget: string }
+          - { name: display, label: "Display (e.g. R350 or Free)", widget: string, hint: "Simple display for site" }
           - { name: is_free, label: Free Event, widget: boolean, default: false }
-      - { name: registration_fee, label: Registration Fee, widget: number, required: false }
-      - { name: registration_open, label: Registration Open, widget: boolean, default: false }
+      - { name: registration_link, label: Registration Link, widget: string, required: false }
+      - { name: registration_open, label: Registration Open?, widget: boolean, default: false }
+      - { name: registration_fee, label: Registration Fee (R), widget: number, required: false }
       - { name: max_attendees, label: Max Attendees, widget: number, required: false }
       - { name: registration_deadline, label: Registration Deadline, widget: datetime, required: false }
       - name: form_fields
-        label: Custom Form Fields
+        label: Registration Form Fields
         widget: list
         required: false
-        hint: "Add custom fields for event registration form"
+        hint: "Custom fields for event registration form"
         fields:
           - { name: label, label: Field Label, widget: string }
           - name: type
             label: Field Type
             widget: select
             options: [text, email, tel, select, textarea, checkbox]
-          - { name: required, label: Required, widget: boolean, default: true }
-          - { name: options, label: "Options (comma separated, for select only)", widget: string, required: false }
-      - { name: registration_link, label: Registration Link, widget: string, required: false }
+          - { name: required, label: Required?, widget: boolean, default: true }
+          - { name: options, label: "Options (comma separated — for select fields only)", widget: string, required: false }
       - { name: published, label: Published, widget: boolean, default: true }
 
   # ─── BLOG POSTS ────────────────────────────────────────────
@@ -154,7 +157,7 @@ collections:
         label: Price
         widget: object
         fields:
-          - { name: display, label: "Display (e.g. R220 or TBC)", widget: string }
+          - { name: display, label: "Display (e.g. R220 or TBC)", widget: string, hint: "Shown on site" }
           - { name: amount, label: Amount (number), widget: number, required: false }
           - { name: confirmed, label: Price Confirmed, widget: boolean, default: true }
       - name: badge
@@ -190,7 +193,7 @@ collections:
       - { name: customer_phone, label: Customer Phone, widget: string }
       - { name: product, label: Product, widget: string }
       - { name: quantity, label: Quantity, widget: number, default: 1 }
-      - { name: amount, label: "Amount (R)", widget: number }
+      - { name: amount, label: Amount (R), widget: number }
       - name: payment_method
         label: Payment Method
         widget: select
@@ -202,34 +205,6 @@ collections:
         options: [pending, paid, failed, refunded]
       - { name: order_date, label: Order Date, widget: datetime }
       - { name: collection_point, label: Collection Point, widget: string, required: false }
-      - { name: notes, label: Notes, widget: text, required: false }
-
-  # ─── DONATIONS ─────────────────────────────────────────────
-  - name: donations
-    label: Donations
-    folder: _data/donations
-    create: true
-    extension: json
-    format: json
-    identifier_field: donor_name
-    fields:
-      - { name: donor_name, label: Donor Name, widget: string }
-      - { name: donor_email, label: Email, widget: string }
-      - { name: amount, label: "Amount (ZAR)", widget: number }
-      - name: donation_type
-        label: Donation Type
-        widget: select
-        options: [Zakaat, Lillah, Sadaqah, "Sponsor a Student", General]
-      - name: payment_method
-        label: Payment Method
-        widget: select
-        options: [Yoco, PayFast, EFT, SnapScan, PayPal]
-      - name: payment_status
-        label: Payment Status
-        widget: select
-        default: confirmed
-        options: [pending, confirmed, failed]
-      - { name: date, label: Date, widget: datetime }
       - { name: notes, label: Notes, widget: text, required: false }
 
   # ─── COURSE REGISTRATIONS ──────────────────────────────────
@@ -258,7 +233,7 @@ collections:
         widget: select
         default: unpaid
         options: [unpaid, registration_fee_paid, monthly_active, overdue, sponsored, withdrawn]
-      - { name: amount_paid, label: "Amount Paid (R)", widget: number, default: 0 }
+      - { name: amount_paid, label: Amount Paid (R), widget: number, default: 0 }
       - { name: sponsor, label: Sponsor, widget: string, required: false }
       - { name: notes, label: Notes, widget: text, required: false }
 
@@ -319,7 +294,7 @@ collections:
             fields:
               - { name: eyebrow, label: Eyebrow, widget: string }
               - { name: heading1, label: Heading Line 1, widget: string }
-              - { name: heading2_teal, label: "Heading Line 2 (teal)", widget: string }
+              - { name: heading2_teal, label: Heading Line 2 (teal), widget: string }
               - { name: subtext, label: Subtext, widget: text, required: false }
               - { name: arabic_text, label: Arabic Text, widget: string, required: false }
               - { name: arabic_ref, label: Arabic Reference, widget: string, required: false }
@@ -359,3 +334,32 @@ collections:
               - { name: address, label: Address, widget: text }
               - { name: website_url, label: Website URL, widget: string, required: false }
               - { name: google_maps_url, label: Google Maps URL, widget: string, required: false }
+
+  # ─── DONATIONS ─────────────────────────────────────────────
+  - name: donations
+    label: Donations
+    folder: _data/donations
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.donor_name}}"
+    extension: json
+    format: json
+    identifier_field: donor_name
+    fields:
+      - { name: donor_name, label: Donor Name, widget: string }
+      - { name: donor_email, label: Email, widget: string }
+      - { name: amount, label: Amount (ZAR), widget: number }
+      - name: donation_type
+        label: Donation Type
+        widget: select
+        options: [Zakaat, Lillah, Sadaqah, Sponsor a Student, General]
+      - name: payment_method
+        label: Payment Method
+        widget: select
+        options: [Yoco, PayFast, EFT, SnapScan, PayPal]
+      - name: payment_status
+        label: Payment Status
+        widget: select
+        options: [pending, confirmed, failed]
+        default: confirmed
+      - { name: date, label: Date, widget: datetime }
+      - { name: notes, label: Notes, widget: text, required: false }
