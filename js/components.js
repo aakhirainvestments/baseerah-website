@@ -59,14 +59,13 @@
     ];
 
     const desktopLinks = navLinks
-      .filter(l => l.label !== 'Home')
       .map(l => `<a href="${l.href}">${l.label}</a>`)
       .join('');
 
     const regHref = onIndex ? '#courses' : 'courses.html#register';
 
     container.innerHTML = `
-<nav id="navbar" class="${onIndex ? 'transparent' : ''}">
+<nav id="navbar" class="transparent">
   <div class="nav-wrap">
     <a href="${onIndex ? '/' : 'index.html'}" class="logo">
       <div class="logo-wrap">
@@ -84,21 +83,15 @@
 
     markActive();
 
-    // Transparent → scrolled behaviour on index only
-    if (onIndex) {
-      const navbar = document.getElementById('navbar');
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
-            navbar.classList.toggle('transparent', window.scrollY <= 60);
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-    }
+    // ALL pages: transparent at top, solid on scroll — nav is sticky
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => {
+      const scrolled = window.scrollY > 60;
+      navbar.classList.toggle('scrolled',  scrolled);
+      navbar.classList.toggle('transparent', !scrolled);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // run immediately in case page loaded mid-scroll
   }
 
   // ── Init Mobile Nav Panel ─────────────────────────────────────
@@ -320,7 +313,7 @@
     </div><!-- /ftop -->
 
     <div class="fbot">
-      <span>&copy; 2026 Baseerah Institute &nbsp;&middot;&nbsp; NPC ${g.npc_number || ''}</span>
+      <span>&copy; ${new Date().getFullYear()} Baseerah Institute &nbsp;&middot;&nbsp; NPC ${g.npc_number || ''} &nbsp;&middot;&nbsp; All rights reserved</span>
       <span><a href="mailto:${g.email || ''}">${g.email || ''}</a></span>
     </div>
 

@@ -7,7 +7,7 @@
 
   <meta name="description" content="A female-led Islamic institute in Cape Town offering Arabic, Hifth and Islamic sciences — rooted in traditional scholarship, open to all."/>
   <meta name="keywords" content="Islamic institute Cape Town, Arabic classes Cape Town, Hifth programme Cape Town, learn Arabic women, female Islamic education South Africa"/>
-  <link rel="canonical" href="https://baseerahinstitute.org/index.html"/>
+  <link rel="canonical" href="https://baseerahinstitute.org/"/>
 
   <meta property="og:site_name"   content="Baseerah Institute"/>
   <meta property="og:type"        content="website"/>
@@ -19,7 +19,6 @@
   <meta name="twitter:title"       content="Baseerah Institute — Consciousness Through Knowledge"/>
   <meta name="twitter:description" content="A female-led Islamic institute in Cape Town offering Arabic, Hifth and Islamic sciences."/>
 
-  <!-- Schema markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,7 +44,7 @@
   }
   </script>
 
-  <!-- Netlify Identity — catches invite/recovery tokens and redirects to /admin -->
+  <!-- Netlify Identity token redirect -->
   <script>
     if (window.location.hash && (
       window.location.hash.includes('invite_token') ||
@@ -72,29 +71,48 @@
 <!-- ─── Hero ─── -->
 <div id="hero-container"></div>
 
+<!-- wave hero → stats -->
+<div class="wave" style="background:var(--charcoal)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#009EA8"/>
+  </svg>
+</div>
+
 <!-- ─── Stats ─── -->
 <section class="stats">
   <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-n">9+</div><div class="stat-l">Years Teaching</div></div>
-      <div class="stat"><div class="stat-n">400+</div><div class="stat-l">Students Taught</div></div>
-      <div class="stat"><div class="stat-n">6</div><div class="stat-l">Programmes</div></div>
-      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Female-Led</div></div>
+    <div id="stats-container">
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-n">2500+</div><div class="stat-l">Students Taught</div></div>
+        <div class="stat"><div class="stat-n">9</div><div class="stat-l">Years of Scholarship</div></div>
+        <div class="stat"><div class="stat-n">4+</div><div class="stat-l">Publications</div></div>
+        <div class="stat"><div class="stat-n">0</div><div class="stat-l">Prerequisites Needed</div></div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- wave stats → about -->
+<div class="wave" style="background:var(--teal)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#FAF8F4"/>
+  </svg>
+</div>
 
 <!-- ─── About ─── -->
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
       <div class="about-text reveal">
-        <span class="eyebrow">Our Story</span>
-        <h2>Knowledge that <strong>transforms</strong> — not just informs.</h2>
-        <p>Baseerah Institute was founded in 2016 by Shaykhah Rukayya Samsodien — a graduate of Abū Nour Institute, Damascus, and a High Court accredited Arabic–English translator.</p>
-        <p>Rooted in the classical tradition, we offer structured Islamic education for women and girls in Cape Town — from <strong>Hifth al-Qur'ān</strong> to <strong>Arabic Mastery</strong>, <strong>Fiqh</strong>, and beyond.</p>
+        <span class="eyebrow">Who We Are</span>
+        <h2>Female-led scholarship, <strong>since 2016.</strong></h2>
+        <p>Baseerah Institute is a female-led Islamic institution that seeks to raise the level of female education and scholarship through the teaching and publishing of traditional Islamic texts and sciences.</p>
+        <p>Founded by Shaykhah Rukayya Samsodien in response to a real gap she witnessed in Cape Town — <strong>accessible, rigorous, women-led Islamic education</strong> — Baseerah has grown from a small weekly gathering into a trusted institution.</p>
         <p>No prior knowledge is ever required. All are welcome, exactly where they are.</p>
-        <a href="about.html" class="btn btn-outline" style="margin-top:8px">About the Institute</a>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px">
+          <a href="about.html" class="btn btn-outline">About the Institute</a>
+          <a href="courses.html" class="btn btn-primary">View Courses</a>
+        </div>
       </div>
       <div class="about-visual reveal">
         <div class="about-frame">
@@ -110,6 +128,13 @@
   </div>
 </section>
 
+<!-- wave about → courses -->
+<div class="wave" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,50 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#F2EDE4"/>
+  </svg>
+</div>
+
 <!-- ─── Courses Preview ─── -->
 <section class="courses" id="courses">
   <div class="wrap">
@@ -119,7 +144,6 @@
       <p>From Hifth to Arabic Mastery — structured programmes designed for busy women.</p>
     </div>
     <div id="courses-preview-container">
-      <!-- Skeleton -->
       <div class="cgrid">
         <div class="skeleton-card cc featured"><div class="skeleton skeleton-img" style="min-height:300px"></div></div>
         <div class="skeleton-card cc"><div class="skeleton skeleton-img"></div><div class="skeleton-body"><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line title"></div><div class="skeleton skeleton-line"></div></div></div>
@@ -133,15 +157,22 @@
   </div>
 </section>
 
+<!-- wave courses → teacher -->
+<div class="wave" style="background:var(--cream-warm)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,60 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#1A1A2E"/>
+  </svg>
+</div>
+
 <!-- ─── Teacher ─── -->
 <section class="teacher" id="teacher">
-  <div class="t-water">ع</div>
+  <div class="t-water">بصيرة</div>
   <div class="t-blob"></div>
   <div class="wrap">
     <div class="tgrid">
       <div class="t-img-wrap reveal">
         <div class="t-frame">
-          <img src="https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?w=600&auto=format&fit=crop&q=70" alt="Shaykhah Rukayya Samsodien"/>
+          <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=700&auto=format&fit=crop&q=80" alt="Shaykhah Rukayya Samsodien"/>
         </div>
         <div class="t-cred">
           <p>Degree in Sharī'ah · Abū Nour Institute, Damascus · High Court Accredited Translator</p>
@@ -166,17 +197,26 @@
   </div>
 </section>
 
+<!-- wave teacher → events -->
+<div class="wave" style="background:var(--charcoal)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#FAF8F4"/>
+  </svg>
+</div>
+
 <!-- ─── Events ─── -->
 <section class="events" id="events">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Upcoming</span>
-      <h2>Events &amp; <em>Short Courses</em></h2>
-      <p>Dowrahs, workshops and intensive courses throughout the year.</p>
+      <span class="eyebrow">2026 Calendar</span>
+      <h2>Upcoming <em>Events</em></h2>
+      <p>All events held at Masjid al-Salaam, Athlone unless otherwise noted.</p>
     </div>
     <div id="events-container">
-      <!-- Skeleton -->
       <div class="egrid">
+        <div class="skeleton-card ec" style="height:100px"></div>
+        <div class="skeleton-card ec" style="height:100px"></div>
+        <div class="skeleton-card ec" style="height:100px"></div>
         <div class="skeleton-card ec" style="height:100px"></div>
         <div class="skeleton-card ec" style="height:100px"></div>
         <div class="skeleton-card ec" style="height:100px"></div>
@@ -188,44 +228,103 @@
 <!-- ─── WhatsApp Banner ─── -->
 <div id="whatsapp-banner-container"></div>
 
+<!-- wave events → testimonials -->
+<div class="wave" style="background:var(--cream-warm)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,50 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#009EA8"/>
+  </svg>
+</div>
+
 <!-- ─── Testimonials ─── -->
 <section class="testi">
   <div class="tb1"></div><div class="tb2"></div>
-  <div class="wrap testi-in">
-    <div class="sec-head" style="color:white">
-      <span class="eyebrow" style="color:rgba(255,255,255,.6)">From Our Students</span>
-      <h2 style="color:white">What they <em style="color:rgba(255,255,255,.8)">say</em></h2>
-    </div>
-    <div class="testi-track" id="testiTrack">
-      <div class="testi-item active">
-        <span class="qmark">"</span>
-        <blockquote>"Shaykhah Rukayya has a rare gift — she makes the most complex Arabic grammar feel completely natural. After just one term I was reading texts I never thought possible."</blockquote>
-        <div class="testi-meta"><span class="testi-name">Aisha M.</span><span class="testi-role">Arabic Mastery Student, 2024</span></div>
+  <div class="wrap">
+    <div class="testi-in reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-item active">
+          <span class="qmark">"</span>
+          <blockquote>"Having attended Hajj last year, I can confidently say that this course was incredibly beneficial. It gave me the ability to communicate, even at a basic level, with Arabic-speaking locals — which added so much value to my experience. I made a friend in Makkah who only speaks Arabic."</blockquote>
+          <div class="testi-meta">
+            <span class="testi-name">Shafeeqah Soeker</span>
+            <span class="testi-role">Wife · Mom · HR Graduate</span>
+          </div>
+        </div>
+        <div class="testi-item">
+          <span class="qmark">"</span>
+          <blockquote>"I was quite apprehensive about immersing myself in an Arabic environment — I find speaking and memorising Arabic difficult. Muallima Rukayya managed to put us at ease and had us speaking and understanding sentences with ease, alhamdulillah. Highly recommend."</blockquote>
+          <div class="testi-meta">
+            <span class="testi-name">Fadeelah Kenny</span>
+            <span class="testi-role">Electrical Engineer · Wife · Mom</span>
+          </div>
+        </div>
+        <div class="testi-item">
+          <span class="qmark">"</span>
+          <blockquote>"We are blessed to sit at the feet of a female scholar with this wealth of knowledge — in Qur'an, Arabic, Fiqh, Aqeedah, Tafseer, and all the Islamic sciences. As women, we need to equip ourselves with the tools and guidelines from Allah and His Messenger."</blockquote>
+          <div class="testi-meta">
+            <span class="testi-name">Fierdous Solomon</span>
+            <span class="testi-role">Baseerah Student</span>
+          </div>
+        </div>
       </div>
-      <div class="testi-item">
-        <span class="qmark">"</span>
-        <blockquote>"I started Hifth at 38, convinced it was too late. Three years later, I've memorised 12 juz. This programme changed my life."</blockquote>
-        <div class="testi-meta"><span class="testi-name">Fatiema K.</span><span class="testi-role">Ladies Hifth Programme, 2023</span></div>
+      <div class="testi-dots" id="testiDots">
+        <button class="tdot active" data-i="0"></button>
+        <button class="tdot" data-i="1"></button>
+        <button class="tdot" data-i="2"></button>
       </div>
-      <div class="testi-item">
-        <span class="qmark">"</span>
-        <blockquote>"The Thursday Dawrah is the highlight of my week. Studying the Seerah in this depth, with such a knowledgeable teacher, is a blessing I don't take for granted."</blockquote>
-        <div class="testi-meta"><span class="testi-name">Ruqayyah S.</span><span class="testi-role">Thursday Dawrah, Ongoing</span></div>
-      </div>
-      <div class="testi-item">
-        <span class="qmark">"</span>
-        <blockquote>"The Muhadathah workbook completely changed how I approach Arabic. I was speaking from lesson one — not just memorising grammar rules."</blockquote>
-        <div class="testi-meta"><span class="testi-name">Nadia A.</span><span class="testi-role">Take a Leap to Speak, 2025</span></div>
-      </div>
-    </div>
-    <div class="testi-dots" id="testiDots">
-      <button class="tdot active" data-i="0"></button>
-      <button class="tdot" data-i="1"></button>
-      <button class="tdot" data-i="2"></button>
-      <button class="tdot" data-i="3"></button>
     </div>
   </div>
 </section>
+
+<!-- wave testimonials → shop/blog preview -->
+<div class="wave" style="background:var(--teal)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,50 C480,0 960,80 1440,30 L1440,80 L0,80 Z" fill="#FAF8F4"/>
+  </svg>
+</div>
+
+<!-- ─── Shop + Blog Preview ─── -->
+<section style="padding:100px 0;background:var(--cream)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">From the Institute</span>
+      <h2>Publications &amp; <em>Resources</em></h2>
+      <p>Books authored by Shaykhah Rukayya, articles on Islamic sciences, and course materials — all in one place.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:2">
+      <div class="cc reveal" style="border-radius:var(--r-xl)">
+        <div class="cc-img" style="height:240px">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80" alt="Baseerah Publications"/>
+          <span class="cc-tag teal">Shop</span>
+        </div>
+        <div class="cc-body">
+          <span class="eyebrow">Publications &amp; Books</span>
+          <h3>Authored by Shaykhah Rukayya</h3>
+          <p>Hifth Guides, Fiqh texts, and the Muhadathah Conversational Arabic workbook series — also available at Chapter 96 Bookz, Lansdowne.</p>
+          <a href="shop.html" class="btn btn-primary" style="margin-top:auto">Browse the Shop</a>
+        </div>
+      </div>
+      <div class="cc reveal" style="border-radius:var(--r-xl)">
+        <div class="cc-img" style="height:240px">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Baseerah Blog"/>
+          <span class="cc-tag dark">Blog</span>
+        </div>
+        <div class="cc-body">
+          <span class="eyebrow">Articles &amp; Reflections</span>
+          <h3>Knowledge worth sharing</h3>
+          <p>Insights on Arabic language, Hifth, Fiqh, and the journey of seeking Islamic knowledge — written for students and curious minds alike.</p>
+          <a href="blog.html" class="btn btn-outline" style="margin-top:auto">Visit the Blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave shop → donate -->
+<div class="wave" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#F2EDE4"/>
+  </svg>
+</div>
 
 <!-- ─── Donate ─── -->
 <section class="donate" id="donate">
@@ -260,6 +359,13 @@
     </div>
   </div>
 </section>
+
+<!-- wave donate → contact -->
+<div class="wave" style="background:var(--cream-warm)">
+  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,40 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#FAF8F4"/>
+  </svg>
+</div>
 
 <!-- ─── Contact ─── -->
 <section class="contact" id="contact">

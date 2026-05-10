@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Shafeeqah Soeker",
+    "role": "Wife · Mom · HR Graduate",
+    "quote": "Having attended Hajj last year, I can confidently say that this course was incredibly beneficial. It gave me the ability to communicate, even at a basic level, with Arabic-speaking locals — which added so much value to my experience. I made a friend in Makkah who only speaks Arabic.",
+    "published": true,
+    "order": 1
+  },
+  {
+    "name": "Fadeelah Kenny",
+    "role": "Electrical Engineer · Wife · Mom",
+    "quote": "I was quite apprehensive about immersing myself in an Arabic environment — I find speaking and memorising Arabic difficult. Muallima Rukayya managed to put us at ease and had us speaking and understanding sentences with ease, alhamdulillah. Highly recommend.",
+    "published": true,
+    "order": 2
+  },
+  {
+    "name": "Fierdous Solomon",
+    "role": "Baseerah Student",
+    "quote": "We are blessed to sit at the feet of a female scholar with this wealth of knowledge — in Qur’an, Arabic, Fiqh, Aqeedah, Tafseer, and all the Islamic sciences. As women, we need to equip ourselves with the tools and guidelines from Allah and His Messenger.",
+    "published": true,
+    "order": 3
+  }
+]

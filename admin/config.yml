@@ -363,3 +363,108 @@ collections:
         default: confirmed
       - { name: date, label: Date, widget: datetime }
       - { name: notes, label: Notes, widget: text, required: false }
+
+  # ─── TEACHERS ──────────────────────────────────────────────
+  - name: teachers
+    label: Teachers
+    folder: _data/teachers
+    create: true
+    extension: json
+    format: json
+    identifier_field: name
+    fields:
+      - { name: name, label: Full Name, widget: string }
+      - { name: role, label: Role / Title, widget: string }
+      - { name: bio, label: Bio, widget: text }
+      - { name: photo, label: Photo, widget: image, required: false }
+      - { name: published, label: Published, widget: boolean, default: true }
+      - { name: order, label: Order (1 = first), widget: number, default: 1 }
+
+  # ─── TESTIMONIALS ──────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    folder: _data/testimonials
+    create: true
+    extension: json
+    format: json
+    identifier_field: name
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: role, label: Role / Description, widget: string }
+      - { name: quote, label: Quote, widget: text }
+      - { name: published, label: Published, widget: boolean, default: true }
+      - { name: order, label: Order, widget: number, default: 1 }
+
+  # ─── STATS ─────────────────────────────────────────────────
+  - name: stats
+    label: Homepage Stats
+    files:
+      - name: stats
+        label: Stats
+        file: _data/settings/stats.json
+        fields:
+          - name: stats
+            label: Stats
+            widget: list
+            fields:
+              - { name: number, label: "Number (e.g. 400+)", widget: string }
+              - { name: label, label: Label (e.g. Students Taught), widget: string }
+
+  # ─── PAGE HEROES ───────────────────────────────────────────
+  - name: page_heroes
+    label: Page Heroes
+    files:
+      - name: courses_hero
+        label: Courses Page Hero
+        file: _data/settings/hero-courses.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }
+      - name: about_hero
+        label: About Page Hero
+        file: _data/settings/hero-about.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }
+      - name: shop_hero
+        label: Shop Page Hero
+        file: _data/settings/hero-shop.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }
+      - name: blog_hero
+        label: Blog Page Hero
+        file: _data/settings/hero-blog.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }
+      - name: donate_hero
+        label: Donate Page Hero
+        file: _data/settings/hero-donate.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }
+      - name: contact_hero
+        label: Contact Page Hero
+        file: _data/settings/hero-contact.json
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: heading, label: Heading, widget: string }
+          - { name: heading_em, label: Heading Italic Part, widget: string }
+          - { name: subtext, label: Subtext, widget: text }
+          - { name: bg_image, label: Background Image, widget: image, required: false }

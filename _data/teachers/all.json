@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Shaykhah Rukayya Samsodien",
+    "role": "Founder & Director",
+    "bio": "Degree in Sharī’ah (Al-Fath University, Damascus) · Ijāza in Hafs · High Court Accredited Arabic–English Translator · Author of 6 publications.",
+    "photo": "",
+    "published": true,
+    "order": 1
+  },
+  {
+    "name": "Teacher Profile",
+    "role": "Instructor",
+    "bio": "Bio coming soon. Contact us to learn more about our teaching team.",
+    "photo": "",
+    "published": true,
+    "order": 2
+  },
+  {
+    "name": "Teacher Profile",
+    "role": "Instructor",
+    "bio": "Bio coming soon. Contact us to learn more about our teaching team.",
+    "photo": "",
+    "published": true,
+    "order": 3
+  }
+]

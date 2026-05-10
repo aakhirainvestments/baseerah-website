@@ -130,8 +130,70 @@
       initCoursesPreview(),
       initEvents(),
       initWhatsAppBanner(),
-      initTestimonials(),
+      initStats(),
+      initTestimonialsFromData(),
     ]);
+  }
+
+  // ── Stats ─────────────────────────────────────────────────────
+  async function initStats() {
+    const el = document.getElementById('stats-container');
+    if (!el) return;
+    let stats;
+    try { const d = await safeFetch(dataUrl('settings/stats.json')); stats = d.stats || []; }
+    catch { return; }
+    el.innerHTML = `<div class="stats-grid">${stats.map(s =>
+      `<div class="stat"><div class="stat-n">${s.number}</div><div class="stat-l">${s.label}</div></div>`
+    ).join('')}</div>`;
+  }
+
+  // ── Testimonials from JSON ────────────────────────────────────
+  async function initTestimonialsFromData() {
+    const track  = document.getElementById('testiTrack');
+    const dotsEl = document.getElementById('testiDots');
+    if (!track) return;
+    let list;
+    try { list = (await safeFetch(dataUrl('testimonials/all.json'))).filter(t => t.published).sort((a,b) => a.order - b.order); }
+    catch { list = []; }
+    if (!list.length) { initTestimonials(); return; }
+
+    track.innerHTML = list.map((t,i) => `
+      <div class="testi-item${i===0?' active':''}">
+        <span class="qmark">"</span>
+        <blockquote>"${t.quote}"</blockquote>
+        <div class="testi-meta">
+          <span class="testi-name">${t.name}</span>
+          <span class="testi-role">${t.role}</span>
+        </div>
+      </div>`).join('');
+
+    if (dotsEl) {
+      dotsEl.innerHTML = list.map((_,i) =>
+        `<button class="tdot${i===0?' active':''}" data-i="${i}"></button>`
+      ).join('');
+    }
+    initTestimonials();
+  }
+
+  // ── Page hero loader (inner pages) ───────────────────────────
+  async function initPageHero(pageKey) {
+    const el = document.getElementById('page-hero-container');
+    if (!el) return;
+    let h;
+    try { h = await safeFetch(dataUrl(`settings/hero-${pageKey}.json`)); }
+    catch { return; }
+    const bgStyle = h.bg_image ? `style="background-image:url('${h.bg_image}');background-size:cover;background-position:center"` : '';
+    el.innerHTML = `
+<section class="page-hero" ${bgStyle}>
+  ${h.bg_image ? `<div style="position:absolute;inset:0;background:rgba(26,26,46,.65);z-index:0"></div>` : ''}
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="page-hero-text reveal">
+      <span class="eyebrow">${h.eyebrow}</span>
+      <h1>${h.heading} <em>${h.heading_em}</em></h1>
+      ${h.subtext ? `<p>${h.subtext}</p>` : ''}
+    </div>
+  </div>
+</section>`;
   }
 
   // ── Hero carousel ─────────────────────────────────────────────
@@ -915,8 +977,29 @@ ${g.paypal_link ? `<div class="paypal-box"><p>International donors — PayPal ac
       }
     }
 
-    // FAQs
-    if (faqRes.status === 'fulfilled') {
+    // Teachers grid
+    const teachersEl = document.getElementById('teachers-container');
+    if (teachersEl) {
+      let teachers = [];
+      try { teachers = (await safeFetch(dataUrl('teachers/all.json'))).filter(t => t.published).sort((a,b) => a.order - b.order); }
+      catch { teachers = []; }
+      teachersEl.innerHTML = teachers.length ? `<div class="teachers-grid">
+        ${teachers.map(t => `
+        <div class="tc reveal">
+          <div class="tc-img${t.photo ? '' : ' placeholder'}">
+            ${t.photo
+              ? `<img src="${t.photo}" alt="${t.name}"/>`
+              : `<div class="ph-icon">👩‍🏫</div><p>${t.name === 'Teacher Profile' ? 'Coming soon' : t.name.split(' ')[0]}</p>`}
+          </div>
+          <div class="tc-body${t.name === 'Teacher Profile' ? ' coming' : ''}">
+            <h3>${t.name}</h3>
+            <span class="role">${t.role}</span>
+            <p>${t.bio}</p>
+          </div>
+        </div>`).join('')}
+      </div>` : '';
+    }
+  }
       const faqs = faqRes.value.map(mapFaq).filter(f => f.published).sort((a,b) => a.order - b.order);
       const faqEl = document.getElementById('faq-container');
       if (faqEl) {
@@ -1094,12 +1177,12 @@ ${g.paypal_link ? `<div class="paypal-box"><p>International donors — PayPal ac
   document.addEventListener('DOMContentLoaded', () => {
     const p = page();
     if      (isPage('index.html'))   initIndex();
-    else if (isPage('courses.html')) initCourses();
-    else if (isPage('shop.html'))    initShop();
-    else if (isPage('blog.html'))    initBlog();
-    else if (isPage('donate.html'))  { initDonate(); initDonatePaymentWidget(); }
-    else if (isPage('about.html'))   initAbout();
-    else if (isPage('contact.html')) initContact();
+    else if (isPage('courses.html')) { initPageHero('courses'); initCourses(); }
+    else if (isPage('shop.html'))    { initPageHero('shop');    initShop(); }
+    else if (isPage('blog.html'))    { initPageHero('blog');    initBlog(); }
+    else if (isPage('donate.html'))  { initPageHero('donate');  initDonate(); initDonatePaymentWidget(); }
+    else if (isPage('about.html'))   { initPageHero('about');   initAbout(); }
+    else if (isPage('contact.html')) { initPageHero('contact'); initContact(); }
   });
 
 })();
