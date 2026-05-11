@@ -999,7 +999,9 @@ ${g.paypal_link ? `<div class="paypal-box"><p>International donors — PayPal ac
         </div>`).join('')}
       </div>` : '';
     }
-  }
+
+    // FAQs
+    if (faqRes.status === 'fulfilled') {
       const faqs = faqRes.value.map(mapFaq).filter(f => f.published).sort((a,b) => a.order - b.order);
       const faqEl = document.getElementById('faq-container');
       if (faqEl) {

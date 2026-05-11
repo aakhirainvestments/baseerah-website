@@ -191,7 +191,11 @@
     const mobMenu   = document.getElementById('mobMenu');
     const mobOverlay = document.getElementById('mobOverlay');
     const mobClose  = document.getElementById('mobClose');
-    if (!hamburger || !mobMenu) return;
+    if (!hamburger || !mobMenu) {
+      // DOM injection may not have finished — retry once
+      setTimeout(attachMobileNavListeners, 50);
+      return;
+    }
 
     const openPanel = () => {
       hamburger.classList.add('open');
