@@ -10,7 +10,8 @@
   // ── Path helpers ─────────────────────────────────────────────
   const depth   = window.location.pathname.split('/').length - 2;
   const prefix  = depth > 0 ? '../'.repeat(depth) : '';
-  const dataUrl = path => `${prefix}_data/${path}`;
+  // Use absolute path for reliability on Netlify — avoids depth calculation errors
+  const dataUrl = path => `/_data/${path}`;
 
   const page = () => window.location.pathname.split('/').pop() || 'index.html';
   const isPage = name => page() === name || page() === name.replace('.html','') ||
@@ -229,6 +230,16 @@
     ${slides.map((_,i) => `<button class="dot${i===0?' active':''}" data-i="${i}"></button>`).join('')}
   </div>
 </section>`;
+
+    // Inject wave after hero
+    const heroSection = el.querySelector('.hero');
+    if (heroSection) {
+      const wave = document.createElement('div');
+      wave.className = 'wave';
+      wave.style.background = 'var(--charcoal)';
+      wave.innerHTML = '<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#009EA8"/></svg>';
+      el.appendChild(wave);
+    }
 
     // Carousel logic
     let cur = 0, timer;

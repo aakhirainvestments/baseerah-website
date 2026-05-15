@@ -26,6 +26,11 @@
   --max: 1160px;
 }
 
+
+/* ─── Hero container — prevents layout shift while JS loads ─────── */
+#hero-container { min-height: 100vh; background: var(--charcoal); }
+#hero-container:empty { min-height: 100vh; background: var(--charcoal); }
+
 /* ─── Reset ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -63,7 +68,7 @@ ul { list-style: none; }
   background: var(--charcoal); color: rgba(255,255,255,.7);
   text-align: center; padding: 11px 24px;
   font-size: 12.5px; letter-spacing: .02em;
-  position: relative; z-index: 50;
+  position: sticky; top: 0; z-index: 50;
   width: 100%;
 }
 .bar a { color: var(--teal); font-weight: 600; }

@@ -69,8 +69,8 @@
   <div class="nav-wrap">
     <a href="${onIndex ? '/' : 'index.html'}" class="logo">
       <div class="logo-wrap">
-        <img src="${onIndex ? '' : '../'}logo-colour.png" alt="Baseerah Institute" class="logo-img logo-colour"/>
-        <img src="${onIndex ? '' : '../'}logo-white.png"  alt="Baseerah Institute" class="logo-img logo-white"/>
+        <img src="/logo-colour.png" alt="Baseerah Institute" class="logo-img logo-colour"/>
+        <img src="/logo-white.png"  alt="Baseerah Institute" class="logo-img logo-white"/>
       </div>
     </a>
     <div class="nav-links">${desktopLinks}</div>
@@ -340,7 +340,7 @@
     // Resolve path to global.json — works from any depth
     const depth = window.location.pathname.split('/').length - 2;
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
-    const globalUrl = `${prefix}_data/settings/global.json`;
+    const globalUrl = '/_data/settings/global.json';
 
     fetch(globalUrl)
       .then(r => r.ok ? r.json() : Promise.reject(r.status))

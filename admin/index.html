@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Baseerah Institute — CMS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600\&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600\&family=Noto+Naskh+Arabic:wght@400;700\&display=swap" rel="stylesheet"/>
 
   <style>
     :root {
@@ -221,23 +221,7 @@
   <script>
     // ── Preview styles (shown in the preview pane) ────────────
     CMS.registerPreviewStyle(
-      'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Noto+Naskh+Arabic:wght@400;700&display=swap',
-      { raw: false }
-    );
-    CMS.registerPreviewStyle('/css/style.css');
-
-    // ── Blog post preview ─────────────────────────────────────
-    var BlogPreview = createClass({
-      render: function () {
-        var e  = this.props.entry;
-        var title   = e.getIn(['data','title'])    || 'Untitled';
-        var excerpt = e.getIn(['data','excerpt'])  || '';
-        var body    = e.getIn(['data','body'])     || '';
-        var cat     = e.getIn(['data','category']) || '';
-        var author  = e.getIn(['data','author'])   || 'Shaykhah Rukayya Samsodien';
-        var labels  = { arabic:'Arabic', hifth:'Hifth', fiqh:'Fiqh & Tazkiya', institute:'Institute News' };
-
-        return h('div', { style: { fontFamily:"'DM Sans',sans-serif", background:'#FAF8F4', padding:'48px', maxWidth:'720px', margin:'0 auto' } },
+      'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600\&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600\&family=Noto+Naskh+Arabic:wght@400;700\&display=swap"'DM Sans',sans-serif", background:'#FAF8F4', padding:'48px', maxWidth:'720px', margin:'0 auto' } },
           h('span', { style: { fontSize:'10px', fontWeight:700, letterSpacing:'.14em', textTransform:'uppercase', background:'#009EA8', color:'white', padding:'5px 14px', borderRadius:'100px' } },
             labels[cat] || cat),
           h('h1', { style: { fontFamily:"'Cormorant Garamond',serif", fontSize:'52px', fontWeight:300, fontStyle:'italic', color:'#1A1A2E', lineHeight:1.05, margin:'20px 0 14px' } }, title),

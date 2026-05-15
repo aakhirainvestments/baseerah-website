@@ -57,7 +57,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600\&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600\&family=Noto+Naskh+Arabic:wght@400;700\&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -70,13 +70,6 @@
 
 <!-- ─── Hero ─── -->
 <div id="hero-container"></div>
-
-<!-- wave hero → stats -->
-<div class="wave" style="background:var(--charcoal)">
-  <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#009EA8"/>
-  </svg>
-</div>
 
 <!-- ─── Stats ─── -->
 <section class="stats">
@@ -110,7 +103,7 @@
       </div>
       <div class="about-visual reveal">
         <div class="about-frame">
-          <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800&auto=format&fit=crop&q=70" alt="Baseerah Institute"/>
+          <picture><source srcset="images/stock/arabic-calligraphy.webp" type="image/webp"/><img src="images/stock/arabic-calligraphy.jpg" width="1400" height="933" fetchpriority="high" alt="Baseerah Institute"/></picture>
         </div>
         <div class="about-badge">
           <div class="about-badge-bar"></div>
@@ -160,7 +153,7 @@
     <div class="tgrid">
       <div class="t-img-wrap reveal">
         <div class="t-frame">
-          <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=700&auto=format&fit=crop&q=80" alt="Shaykhah Rukayya Samsodien"/>
+          <picture><source srcset="images/stock/shaykhah-portrait.webp" type="image/webp"/><img src="images/stock/shaykhah-portrait.jpg" width="1400" height="932" loading="lazy" decoding="async" alt="Shaykhah Rukayya Samsodien"/></picture>
         </div>
         <div class="t-cred">
           <p>Degree in Sharī'ah · Abū Nour Institute, Damascus · High Court Accredited Translator</p>
@@ -269,7 +262,7 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:2">
       <div class="cc reveal" style="border-radius:var(--r-xl)">
         <div class="cc-img" style="height:240px">
-          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80" alt="Baseerah Publications"/>
+          <picture><source srcset="images/stock/publications.webp" type="image/webp"/><img src="images/stock/publications.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Baseerah Publications"/></picture>
           <span class="cc-tag teal">Shop</span>
         </div>
         <div class="cc-body">
@@ -281,7 +274,7 @@
       </div>
       <div class="cc reveal" style="border-radius:var(--r-xl)">
         <div class="cc-img" style="height:240px">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80" alt="Baseerah Blog"/>
+          <picture><source srcset="images/stock/blog.webp" type="image/webp"/><img src="images/stock/blog.jpg" width="1400" height="2100" loading="lazy" decoding="async" alt="Baseerah Blog"/></picture>
           <span class="cc-tag dark">Blog</span>
         </div>
         <div class="cc-body">
@@ -377,8 +370,8 @@
 <!-- Footer -->
 <div id="footer-container"></div>
 
-<script src="js/components.js"></script>
-<script src="js/app.js"></script>
+<script src="js/components.js" defer></script>
+<script src="js/app.js" defer></script>
 
 </body>
 </html>
