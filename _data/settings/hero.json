@@ -1,56 +1,56 @@
 {
   "slides": [
     {
-      "eyebrow": "Cape Town · Est. 2016",
-      "heading1": "Consciousness",
-      "heading2_teal": "Knowledge.",
-      "subtext": "",
       "arabic_text": "وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونَ",
       "arabic_ref": "Surah Adh-Dhariyat: 56",
-      "btn_primary_text": "Explore Our Courses",
-      "btn_primary_link": "#courses",
-      "btn_secondary_text": "About Baseerah",
+      "bg_image": "/images/uploads/img_7925_edited.jpg",
       "btn_secondary_link": "#about",
-      "bg_image": "https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1800&auto=format&fit=crop&q=70"
-    },
-    {
-      "eyebrow": "2026 Registration Open",
-      "heading1": "Where would",
-      "heading2_teal": "you like to begin?",
-      "subtext": "Arabic Mastery, Hifth, Conversational Arabic, Aqīdah — and more. No prior knowledge required. All are welcome.",
-      "arabic_text": "",
-      "arabic_ref": "",
-      "btn_primary_text": "View All Courses",
+      "eyebrow": "Cape Town · Est. 2016",
+      "heading2_teal": "Knowledge.",
+      "btn_primary_text": "Explore Our Courses",
+      "subtext": "",
+      "heading1": "Consciousness",
       "btn_primary_link": "#courses",
-      "btn_secondary_text": "Enquire Now",
+      "btn_secondary_text": "About Baseerah"
+    },
+    {
+      "arabic_text": "",
+      "arabic_ref": "",
+      "bg_image": "/images/uploads/img_7695_edited.jpg",
       "btn_secondary_link": "mailto:baseerahinstitute.sa@gmail.com",
-      "bg_image": "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=1800&auto=format&fit=crop&q=70"
+      "eyebrow": "2026 Registration Open",
+      "heading2_teal": "you like to begin?",
+      "btn_primary_text": "View All Courses",
+      "subtext": "Arabic Mastery, Hifth, Conversational Arabic, Aqīdah — and more. No prior knowledge required. All are welcome.",
+      "heading1": "Where would",
+      "btn_primary_link": "#courses",
+      "btn_secondary_text": "Enquire Now"
     },
     {
-      "eyebrow": "Meet Our Teacher",
-      "heading1": "Shaykhah",
-      "heading2_teal": "Rukayya Samsodien",
-      "subtext": "Six years in Damascus. A degree in Sharī'ah. An ijāza in Hafs. A life dedicated to bringing this knowledge home to Cape Town.",
       "arabic_text": "",
       "arabic_ref": "",
-      "btn_primary_text": "Her Story",
-      "btn_primary_link": "#teacher",
-      "btn_secondary_text": "",
+      "bg_image": "/images/uploads/img_8093_edited.jpg",
       "btn_secondary_link": "",
-      "bg_image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1800&auto=format&fit=crop&q=70"
+      "eyebrow": "Meet Our Teacher",
+      "heading2_teal": "Rukayya Samsodien",
+      "btn_primary_text": "Her Story",
+      "subtext": "Six years in Damascus. A degree in Sharī'ah. An ijāza in Hafs. A life dedicated to bringing this knowledge home to Cape Town.",
+      "heading1": "Shaykhah",
+      "btn_primary_link": "#teacher",
+      "btn_secondary_text": ""
     },
     {
-      "eyebrow": "Support Islamic Education",
-      "heading1": "Invest in",
-      "heading2_teal": "her learning.",
-      "subtext": "Zakaat. Lillah. Sadaqah. Sponsor a student. Every contribution keeps this knowledge alive and within reach for women who need it.",
       "arabic_text": "",
       "arabic_ref": "",
-      "btn_primary_text": "Donate Now",
-      "btn_primary_link": "#donate",
-      "btn_secondary_text": "Sponsor a Student",
+      "bg_image": "/images/uploads/img_5173.jpg",
       "btn_secondary_link": "#donate",
-      "bg_image": "https://images.unsplash.com/photo-1491841651911-c44c30c34548?w=1800&auto=format&fit=crop&q=70"
+      "eyebrow": "Support Islamic Education",
+      "heading2_teal": "her learning.",
+      "btn_primary_text": "Donate Now",
+      "subtext": "Zakaat. Lillah. Sadaqah. Sponsor a student. Every contribution keeps this knowledge alive and within reach for women who need it.",
+      "heading1": "Invest in",
+      "btn_primary_link": "#donate",
+      "btn_secondary_text": "Sponsor a Student"
     }
   ]
 }
